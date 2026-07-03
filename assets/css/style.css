@@ -1409,22 +1409,22 @@ BLOG DETAILS FINAL
 HOW IT WORKS
 ==================================================*/
 
-.process-number{
-    position:absolute;
-    top:-18px;
-    left:50%;
-    transform:translateX(-50%);
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--color-primary);
-    color:#fff;
-    font-weight:700;
-    border:4px solid #fff;
-    z-index:10;
+.process-number {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    border: 4px solid #fff;
+    z-index: 10;
 }
 
 .process-number:hover {
@@ -2897,4 +2897,270 @@ body.dark-mode {
 
 .dark-mode .list-group-item {
     border-bottom-color: #334155 !important;
+}
+
+/* ================================
+   CUSTOMER DASHBOARD FONT FIX
+================================ */
+
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card h4,
+.dashboard-card h5,
+.dashboard-card p,
+.dashboard-card span,
+.dashboard-panel h3,
+.dashboard-panel h4,
+.dashboard-panel h5,
+.dashboard-panel p,
+.dashboard-panel strong,
+.dashboard-panel small {
+    color: #ffffff !important;
+}
+
+/* Payment Table */
+.dashboard-panel table {
+    background: #ffffff !important;
+}
+
+.dashboard-panel table thead th {
+    color: #475569 !important;
+    background: #f8fafc !important;
+}
+
+.dashboard-panel table tbody td {
+    color: #1e293b !important;
+    background: #ffffff !important;
+}
+
+/* Cards */
+.dashboard-card {
+    background: #253044 !important;
+}
+
+.dashboard-panel {
+    background: #253044 !important;
+}
+
+/* Sidebar */
+.dashboard-sidebar,
+.dashboard-sidebar a,
+.dashboard-sidebar i {
+    color: #ffffff !important;
+}
+
+/* Topbar */
+.dashboard-topbar,
+.dashboard-topbar h2,
+.dashboard-user,
+.dashboard-user strong,
+.dashboard-user small {
+    color: #ffffff !important;
+}
+
+
+/* ---------- Light Mode ---------- */
+.dashboard-sidebar {
+    background: #ffffff;
+}
+
+.dashboard-sidebar a {
+    color: #1e293b !important;
+}
+
+.dashboard-sidebar a i {
+    color: #1e293b !important;
+}
+
+.dashboard-sidebar a.active {
+    background: #4f5bd5;
+    color: #ffffff !important;
+}
+
+.dashboard-sidebar a.active i {
+    color: #ffffff !important;
+}
+
+/* ---------- Dark Mode ---------- */
+.dark-mode .dashboard-sidebar {
+    background: #111827;
+}
+
+.dark-mode .dashboard-sidebar a {
+    color: #ffffff !important;
+}
+
+.dark-mode .dashboard-sidebar a i {
+    color: #ffffff !important;
+}
+
+.dark-mode .dashboard-sidebar a.active {
+    background: #4f5bd5;
+    color: #ffffff !important;
+}
+
+/*==================================================
+THEME FIX - LOGIN + CUSTOMER DASHBOARD
+==================================================*/
+
+/* ---------- LIGHT MODE ---------- */
+
+body:not(.dark-mode) .dashboard-sidebar {
+    background: #ffffff;
+}
+
+body:not(.dark-mode) .dashboard-logo h3,
+body:not(.dark-mode) .dashboard-menu a,
+body:not(.dark-mode) .dashboard-menu a i {
+    color: #1f2937 !important;
+}
+
+body:not(.dark-mode) .dashboard-user h5,
+body:not(.dark-mode) .dashboard-user h6,
+body:not(.dark-mode) .dashboard-user strong,
+body:not(.dark-mode) .dashboard-user span {
+    color: #1f2937 !important;
+}
+
+body:not(.dark-mode) .dashboard-user small {
+    color: #6b7280 !important;
+}
+
+body:not(.dark-mode) .dashboard-topbar h1,
+body:not(.dark-mode) .dashboard-topbar h2 {
+    color: #111827 !important;
+}
+
+/* ---------- DARK MODE ---------- */
+
+body.dark-mode .dashboard-sidebar {
+    background: #111827;
+}
+
+body.dark-mode .dashboard-main {
+    background: #0f172a;
+}
+
+body.dark-mode .dashboard-card,
+body.dark-mode .dashboard-box,
+body.dark-mode .dashboard-widget {
+    background: #253044;
+}
+
+body.dark-mode .dashboard-logo h3,
+body.dark-mode .dashboard-menu a,
+body.dark-mode .dashboard-menu a i,
+body.dark-mode .dashboard-topbar h1,
+body.dark-mode .dashboard-topbar h2,
+body.dark-mode .dashboard-card h1,
+body.dark-mode .dashboard-card h2,
+body.dark-mode .dashboard-card h3,
+body.dark-mode .dashboard-card h4,
+body.dark-mode .dashboard-card h5,
+body.dark-mode .dashboard-card p,
+body.dark-mode .dashboard-user h5,
+body.dark-mode .dashboard-user h6,
+body.dark-mode .dashboard-user strong,
+body.dark-mode .dashboard-user span {
+    color: #ffffff !important;
+}
+
+body.dark-mode .dashboard-user small {
+    color: #cbd5e1 !important;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+
+.alert-danger,
+.login-error {
+    background: #fde8e8 !important;
+    color: #b91c1c !important;
+    border: 1px solid #f5c2c7;
+}
+
+body.dark-mode .alert-danger,
+body.dark-mode .login-error {
+    background: #4b1d1d !important;
+    color: #ffffff !important;
+    border: 1px solid #7f1d1d;
+}
+
+/* ---------- INPUTS ---------- */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    color: #ffffff !important;
+    background: #111827 !important;
+}
+
+body:not(.dark-mode) input,
+body:not(.dark-mode) textarea,
+body:not(.dark-mode) select {
+    color: #111827 !important;
+}
+
+/* ---------- TABLE ---------- */
+
+body.dark-mode table {
+    background: #ffffff;
+}
+
+body.dark-mode table th {
+    color: #475569 !important;
+}
+
+body.dark-mode table td {
+    color: #1f2937 !important;
+}
+
+/* ===== Upcoming Payment Card Fix ===== */
+
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card h4,
+.dashboard-card .amount,
+.payment-card h1,
+.payment-card h2,
+.payment-card h3,
+.upcoming-payment h1,
+.upcoming-payment h2,
+.upcoming-payment h3 {
+
+    color: #ffffff !important;
+
+}
+
+.dashboard-card p,
+.payment-card p,
+.upcoming-payment p {
+
+    color: #ffffff !important;
+
+}
+
+/* PAYMENT SUMMARY CARDS FIX */
+
+.dashboard-content .dashboard-card h2 {
+    color: #ffffff !important;
+}
+
+.dashboard-content .dashboard-card p {
+    color: #ffffff !important;
+}
+
+.dashboard-content .dashboard-card * {
+    color: inherit;
+}
+
+/* ===== Upcoming Payment Amount Fix ===== */
+
+.dashboard-panel h2 {
+    color: #ffffff !important;
+}
+
+.dashboard-panel p,
+.dashboard-panel strong {
+    color: #ffffff !important;
 }
