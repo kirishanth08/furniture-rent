@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Checkout | FurniRent</title>
+    <meta name="description"
+        content="Review your rental order, confirm delivery details and complete your FurniRent checkout.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body class="">
+
+    <script src="../assets/js/storage.js"></script>
+    <script>
+        // Guard this page: only a logged-in customer may reach checkout.
+        // Anyone else is bounced straight to login and brought back here
+        // automatically after they sign in.
+        FurniAuth.requireAuth("customer", "login.html?redirect=checkout.html");
+    </script>
+
+    <section class="top-bar bg-light py-2 text-muted border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 text-sm">
+                        <a href="tel:+919876543210" class="text-decoration-none text-muted"><i
+                                class="fa-solid fa-phone me-1"></i> +91 98765 43210</a>
+                        <a href="mailto:support@furnirent.com" class="text-decoration-none text-muted"><i
+                                class="fa-solid fa-envelope me-1"></i> support@furnirent.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 text-center text-lg-end">
+                    <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-sm">
+                        <a href="#" class="text-decoration-none text-muted">Help</a>
+                        <a href="how-it-works.html" class="text-decoration-none text-muted">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-primary">Home</a></li>
+                <li class="breadcrumb-item"><a href="catalog.html" class="text-decoration-none text-primary">Catalog</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="checkout-section section-padding pt-2">
+        <div class="container">
+
+            <div class="section-heading mb-4">
+                <h1 class="fw-bold" style="font-family: 'Merriweather', serif;">Checkout</h1>
+                <p class="text-muted mb-0">Confirm your rental item, delivery details and payment method to place
+                    your order.</p>
+            </div>
+
+            <div id="emptyCartNotice" class="alert alert-warning d-none" role="alert">
+                Your rental cart is empty. <a href="catalog.html" class="fw-semibold">Browse the catalog</a> to add
+                an item first.
+            </div>
+
+            <div id="checkoutSuccess" class="alert alert-success d-none" role="alert">
+                <i class="fa-solid fa-circle-check me-2"></i> Your rental request has been placed successfully!
+                Redirecting you to your rentals&hellip;
+            </div>
+
+            <form id="checkoutForm" class="row g-5">
+
+                <div class="col-lg-7">
+
+                    <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                        <h5 class="fw-bold mb-4"><i class="fa-solid fa-truck-fast text-primary me-2"></i>Delivery
+                            Details</h5>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Full Name</label>
+                                <input type="text" id="checkoutName" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Phone Number</label>
+                                <input type="tel" id="checkoutPhone" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Delivery Address</label>
+                                <textarea id="checkoutAddress" class="form-control form-control-lg" rows="2"
+                                    required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">City</label>
+                                <input type="text" id="checkoutCity" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Pincode</label>
+                                <input type="text" id="checkoutPincode" class="form-control form-control-lg" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-4 shadow-sm border border-light">
+                        <h5 class="fw-bold mb-4"><i class="fa-solid fa-credit-card text-primary me-2"></i>Payment
+                            Method</h5>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="payUpi" checked>
+                            <label class="form-check-label fw-semibold" for="payUpi">UPI</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="payCard">
+                            <label class="form-check-label fw-semibold" for="payCard">Credit / Debit Card</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="payCod">
+                            <label class="form-check-label fw-semibold" for="payCod">Cash on Delivery</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="bg-white p-4 rounded-4 shadow-sm border border-light position-sticky"
+                        style="top: 100px; border-left: 4px solid var(--color-primary) !important;">
+
+                        <h5 class="fw-bold mb-4">Order Summary</h5>
+
+                        <div class="d-flex gap-3 align-items-center mb-4">
+                            <img id="summaryImage" src="" alt="" class="rounded-3"
+                                style="width: 90px; height: 90px; object-fit: cover; display:none;">
+                            <div>
+                                <h6 class="fw-bold mb-1" id="summaryName">&nbsp;</h6>
+                                <span class="badge bg-light text-dark border" id="summaryCategory"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between text-muted mb-2">
+                            <span>Rental Duration</span>
+                            <span class="fw-semibold text-dark" id="summaryDuration">—</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted mb-2">
+                            <span>Monthly Rent</span>
+                            <span class="fw-semibold text-dark" id="summaryMonthly">₹0</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted mb-2">
+                            <span>Delivery & Setup</span>
+                            <span class="fw-semibold text-success">Free</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="fw-bold">Payable Today</span>
+                            <h5 class="mb-0 text-primary fw-bold" id="summaryTotal">₹0</h5>
+                        </div>
+
+                        <button type="submit" id="placeOrderBtn" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm">
+                            <i class="fa-solid fa-lock me-2"></i> Confirm & Place Rental Order
+                        </button>
+
+                        <p class="text-muted text-sm mt-3 mb-0 text-center">
+                            <i class="fa-solid fa-shield-halved text-primary me-1"></i> Secure checkout. No hidden
+                            charges.
+                        </p>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="catalog.html?room=living-room" class="text-decoration-none text-white-50">Living
+                                Room</a></li>
+                        <li><a href="catalog.html?room=bedroom" class="text-decoration-none text-white-50">Bedroom</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        (() => {
+            const cartRaw = localStorage.getItem("furnirent_cart");
+            const checkoutForm = document.getElementById("checkoutForm");
+            const emptyNotice = document.getElementById("emptyCartNotice");
+
+            let cart = null;
+
+            try {
+                cart = cartRaw ? JSON.parse(cartRaw) : null;
+            } catch (e) {
+                cart = null;
+            }
+
+            if (!cart) {
+                emptyNotice.classList.remove("d-none");
+                checkoutForm.classList.add("d-none");
+                return;
+            }
+
+            const monthly = Number(cart.monthlyPrice) || 0;
+
+            document.getElementById("summaryName").textContent = cart.name || "Rental Item";
+            document.getElementById("summaryCategory").textContent = cart.category || "Furniture";
+            document.getElementById("summaryDuration").textContent = cart.durationLabel || (cart.durationMonths ? cart.durationMonths + " Months" : "3 Months");
+            document.getElementById("summaryMonthly").textContent = "₹" + monthly.toLocaleString("en-IN");
+            document.getElementById("summaryTotal").textContent = "₹" + monthly.toLocaleString("en-IN");
+
+            const summaryImage = document.getElementById("summaryImage");
+            if (cart.image) {
+                summaryImage.src = cart.image;
+                summaryImage.alt = cart.name || "Rental item";
+                summaryImage.style.display = "block";
+            }
+
+            checkoutForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const placeOrderBtn = document.getElementById("placeOrderBtn");
+                placeOrderBtn.disabled = true;
+                placeOrderBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Placing Order...';
+
+                setTimeout(() => {
+                    localStorage.removeItem("furnirent_cart");
+
+                    checkoutForm.classList.add("d-none");
+                    document.getElementById("checkoutSuccess").classList.remove("d-none");
+
+                    setTimeout(() => {
+                        window.location.href = "dashboard-rentals.html";
+                    }, 1500);
+                }, 800);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

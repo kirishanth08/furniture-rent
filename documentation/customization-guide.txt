@@ -1,0 +1,47 @@
+==============================
+CUSTOMIZATION GUIDE
+==============================
+
+Colors
+
+Edit CSS Variables inside
+
+assets/css/style.css
+
+Fonts
+
+Heading:
+Merriweather
+
+Body:
+DM Sans
+
+Images
+
+Replace images inside
+
+assets/images/
+
+Icons
+
+Font Awesome Icons
+
+Dark Mode
+
+Edit
+
+assets/css/dark-mode.css
+
+JavaScript
+
+Edit
+
+assets/js/main.js
+
+Dashboard Logic
+
+Edit
+
+assets/js/dashboard.js
+
+Thank you.

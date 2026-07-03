@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <title>Rental Plans | Home Furniture Rental</title>
+    <meta name="description"
+        content="Explore our flexible furniture rental plans: Starter, Standard, and Long-Term. Affordable options for students and professionals.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+</head>
+
+<body class="">
+
+    <section class="top-bar bg-light py-2 text-muted border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 text-sm">
+                        <a href="tel:+919876543210" class="text-decoration-none text-muted"><i
+                                class="fa-solid fa-phone me-1"></i> +91 98765 43210</a>
+                        <a href="mailto:support@furnirent.com" class="text-decoration-none text-muted"><i
+                                class="fa-solid fa-envelope me-1"></i> support@furnirent.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 text-center text-lg-end">
+                    <div class="d-flex justify-content-center justify-content-lg-end gap-3 text-sm">
+                        <a href="#" class="text-decoration-none text-muted">Help</a>
+                        <a href="how-it-works.html" class="text-decoration-none text-muted">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==========================================
+PRICING HERO
+========================================== -->
+
+    <section class="pricing-hero section-padding">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-xl-8 col-lg-10 text-center">
+
+                    <span class="section-subtitle">
+                        Flexible Rental Plans
+                    </span>
+
+                    <h1 class="hero-title mt-3">
+                        Choose A Rental Plan That
+                        Fits Your Lifestyle
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Whether you're moving into a new apartment,
+                        furnishing a student room, or setting up a
+                        long-term home, our flexible rental plans
+                        give you complete freedom without the cost
+                        of buying furniture.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="row g-4 justify-content-center mt-5">
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                        <h5>Free Delivery</h5>
+
+                        <p>
+                            Delivery & professional setup included
+                            on every rental order.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+
+                        <h5>Easy Furniture Swap</h5>
+
+                        <p>
+                            Upgrade or exchange your furniture
+                            whenever your needs change.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+
+                        <h5>Damage Protection</h5>
+
+                        <p>
+                            Optional protection plans for complete
+                            peace of mind.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+FEATURE COMPARISON
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+                    Compare Plans
+                </span>
+
+                <h2 class="mb-3">
+                    Choose The Plan That Fits You
+                </h2>
+
+                <p class="hero-description">
+
+                    Compare all rental plans and find the one that
+                    perfectly suits your budget and furniture needs.
+
+                </p>
+
+            </div>
+
+            <div class="table-responsive comparison-wrapper">
+
+                <table class="table comparison-table align-middle mb-0">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Features</th>
+
+                            <th class="text-center">
+
+                                Starter
+
+                            </th>
+
+                            <th class="text-center active-column">
+
+                                Standard
+
+                            </th>
+
+                            <th class="text-center">
+
+                                Long-Term
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Monthly Price</td>
+
+                            <td class="text-center">
+                                ₹999
+                            </td>
+
+                            <td class="text-center active-column">
+                                ₹1499
+                            </td>
+
+                            <td class="text-center">
+                                ₹1999
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Minimum Rental</td>
+
+                            <td class="text-center">
+
+                                3 Months
+
+                            </td>
+
+                            <td class="text-center active-column">
+
+                                6 Months
+
+                            </td>
+
+                            <td class="text-center">
+
+                                12 Months
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Free Delivery</td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                            <td class="text-center active-column">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Furniture Swap</td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-xmark text-danger"></i>
+
+                            </td>
+
+                            <td class="text-center active-column">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Damage Protection</td>
+
+                            <td class="text-center">
+
+                                Basic
+
+                            </td>
+
+                            <td class="text-center active-column">
+
+                                Premium
+
+                            </td>
+
+                            <td class="text-center">
+
+                                Premium +
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Dedicated Manager</td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-xmark text-danger"></i>
+
+                            </td>
+
+                            <td class="text-center active-column">
+
+                                <i class="fa-solid fa-xmark text-danger"></i>
+
+                            </td>
+
+                            <td class="text-center">
+
+                                <i class="fa-solid fa-check text-success"></i>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+SECURITY DEPOSIT
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <span class="section-subtitle">
+
+                        Security Deposit
+
+                    </span>
+
+                    <h2 class="mt-3">
+
+                        Simple, Transparent &
+                        Refundable Deposit
+
+                    </h2>
+
+                    <p class="hero-description text-start">
+
+                        We collect a refundable security deposit before
+                        delivery to ensure safe usage of our furniture.
+                        Once your rental period ends and the furniture
+                        passes inspection, your deposit is refunded
+                        without hidden deductions.
+
+                    </p>
+
+                    <a href="contact.html" class="btn btn-primary mt-3">
+
+                        Learn More
+
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+
+                            <div class="deposit-card">
+
+                                <i class="fa-solid fa-wallet"></i>
+
+                                <h5>
+
+                                    Refundable
+
+                                </h5>
+
+                                <p>
+
+                                    100% refundable after
+                                    successful inspection.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="deposit-card">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                <h5>
+
+                                    Damage Cover
+
+                                </h5>
+
+                                <p>
+
+                                    Minor wear is accepted
+                                    under our policy.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="deposit-card">
+
+                                <i class="fa-solid fa-file-circle-check"></i>
+
+                                <h5>
+
+                                    Easy Inspection
+
+                                </h5>
+
+                                <p>
+
+                                    Quick inspection within
+                                    48 hours after return.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="deposit-card">
+
+                                <i class="fa-solid fa-money-bill-wave"></i>
+
+                                <h5>
+
+                                    Fast Refund
+
+                                </h5>
+
+                                <p>
+
+                                    Deposit transferred
+                                    within 5 working days.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <br>
+
+    <!-- ==========================================
+FAQ SECTION
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+
+                    Frequently Asked Questions
+
+                </span>
+
+                <h2 class="mt-3">
+
+                    Everything You Need To Know
+
+                </h2>
+
+                <p class="hero-description">
+
+                    Have questions? We've answered the most common
+                    questions about renting furniture.
+
+                </p>
+
+            </div>
+
+            <div class="accordion custom-faq" id="pricingFAQ">
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+
+                            Is the Security Deposit Refundable?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. The full security deposit is refunded
+                            after successful furniture inspection.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+
+                            Can I Swap Furniture?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. Standard and Long-Term plans
+                            include furniture swap benefits.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+
+                            Is Delivery Free?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. Delivery and installation are
+                            included in every rental plan.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 4 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq4">
+
+                            What Happens If Furniture Is Damaged?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+
+                        <div class="accordion-body">
+
+                            Minor wear is accepted. Major damages
+                            may incur repair charges.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 5 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq5">
+
+                            Can I End My Rental Early?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. Early termination is possible
+                            based on the selected rental plan.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+CTA
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="pricing-cta">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-8">
+
+                        <h2>
+
+                            Ready To Rent Premium Furniture?
+
+                        </h2>
+
+                        <p>
+
+                            Choose your rental plan today and enjoy
+                            affordable, flexible furniture solutions.
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end">
+
+                        <a href="catalog.html" class="btn btn-warning btn-lg">
+
+                            Browse Furniture
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+PRICING PLANS
+========================================== -->
+
+    <section class="pricing-preview section-padding">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">Rental Plans</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Flexible Pricing Plans</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card h-100 p-4 text-center bg-white">
+                        <h4 class="fw-bold text-muted mb-3">Starter</h4>
+                        <h2 class="display-5 fw-bold text-primary mb-4">₹999 <span
+                                class="fs-6 text-muted fw-normal">/Month</span></h2>
+                        <ul class="list-unstyled text-muted flex-grow-1">
+                            <li><i class="fa-solid fa-check text-success me-2"></i> 2 Furniture Items</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Free Delivery</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Free Installation</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Email Support</li>
+                        </ul>
+                        <a href="plan-checkout.html?plan=Starter&price=999"
+                            class="btn btn-outline-primary btn-lg w-100 fw-semibold mt-auto">Choose
+                            Plan</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card active-plan h-100 p-4 text-center shadow-lg bg-white">
+                        <span class="plan-badge">Most Popular</span>
+                        <h4 class="fw-bold text-dark mb-3 mt-2">Standard</h4>
+                        <h2 class="display-5 fw-bold text-primary mb-4">₹2499 <span
+                                class="fs-6 text-muted fw-normal">/Month</span></h2>
+                        <ul class="list-unstyled text-muted flex-grow-1">
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Unlimited Furniture</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Priority Delivery</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Free Exchange</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Premium Support</li>
+                        </ul>
+                        <a href="plan-checkout.html?plan=Standard&price=2499"
+                            class="btn btn-primary btn-lg w-100 fw-semibold mt-auto text-white">Get
+                            Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card h-100 p-4 text-center bg-white">
+                        <h4 class="fw-bold text-muted mb-3">Long-Term</h4>
+                        <h2 class="display-5 fw-bold text-primary mb-4">₹3999 <span
+                                class="fs-6 text-muted fw-normal">/Month</span></h2>
+                        <ul class="list-unstyled text-muted flex-grow-1">
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Luxury Collection</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Unlimited Swaps</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> Dedicated Manager</li>
+                            <li><i class="fa-solid fa-check text-success me-2"></i> VIP Support</li>
+                        </ul>
+                        <a href="plan-checkout.html?plan=Long-Term&price=3999"
+                            class="btn btn-outline-primary btn-lg w-100 fw-semibold mt-auto">Choose
+                            Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="404.html" aria-label="Facebook"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="Instagram"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Twitter"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Study</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Storage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

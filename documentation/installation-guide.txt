@@ -1,0 +1,36 @@
+==========================
+INSTALLATION GUIDE
+==========================
+
+1. Download the project.
+
+2. Extract the ZIP file.
+
+3. Open the project folder.
+
+4. Open pages/index.html in any modern browser.
+
+5. No backend installation required.
+
+6. No database required.
+
+7. No npm installation required.
+
+8. All files are static HTML.
+
+Compatible Browsers
+
+- Chrome
+- Firefox
+- Edge
+- Safari
+
+Recommended Screen Width
+
+Desktop : 1280+
+
+Tablet : 768+
+
+Mobile : 375+
+
+Thank you for using FurniRent.
