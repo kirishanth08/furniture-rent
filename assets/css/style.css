@@ -2739,6 +2739,37 @@ body.dark-mode {
     color: #93C5FD;
 }
 
+/* Bootstrap alerts (login/register errors, checkout & request success
+   messages, etc.) keep their light Bootstrap background in dark mode,
+   but the generic ".dark-mode div" rule above was still forcing their
+   text to a light color — light text on a light background is
+   unreadable. Give each variant a dark, tinted background to match. */
+.dark-mode .alert-success {
+    background: rgba(25, 135, 84, 0.18) !important;
+    color: #75dd9d !important;
+    border-color: rgba(25, 135, 84, 0.4) !important;
+}
+
+.dark-mode .alert-danger {
+    background: rgba(220, 53, 69, 0.18) !important;
+    color: #f5a3ac !important;
+    border-color: rgba(220, 53, 69, 0.4) !important;
+}
+
+.dark-mode .alert-warning {
+    background: rgba(255, 193, 7, 0.18) !important;
+    color: #ffda6a !important;
+    border-color: rgba(255, 193, 7, 0.4) !important;
+}
+
+/* Same problem on the login page's "SSL Secured / Safe Login /
+   Verified Users" badges: light #f8f9fa background, text forced
+   light by the generic rule above. */
+.dark-mode .security-badges div {
+    background: #1E293B !important;
+    color: #CBD5E1 !important;
+}
+
 .dark-mode a:hover {
     color: #BFDBFE;
 }
