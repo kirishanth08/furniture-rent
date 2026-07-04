@@ -755,3 +755,24 @@ body.admin-sidebar-open .admin-sidebar-overlay {
     color: #ffffff !important;
     font-weight: 700;
 }
+
+/* ==============================
+   Latest Rentals Table Dark Mode Fix
+============================== */
+
+[data-theme="dark"] .admin-table tbody td,
+body.dark-mode .admin-table tbody td {
+    color: #1e293b !important;
+    background: #ffffff !important;
+}
+
+[data-theme="dark"] .admin-table tbody td strong,
+body.dark-mode .admin-table tbody td strong {
+    color: #111827 !important;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .admin-table tbody td small,
+body.dark-mode .admin-table tbody td small {
+    color: #64748b !important;
+}
