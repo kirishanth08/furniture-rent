@@ -2642,6 +2642,22 @@ body.dark-mode {
     background: #111827 !important;
 }
 
+/* The default Bootstrap toggler icon is a dark SVG with a faint
+   border meant for light navbars, so it was almost invisible against
+   the dark-mode navbar background. Invert it to a light icon and
+   brighten the border so it's actually visible on mobile. */
+.dark-mode .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
 .dark-mode .bg-white,
 .dark-mode .bg-light {
     background: #1E293B !important;
