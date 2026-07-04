@@ -2776,6 +2776,20 @@ body.dark-mode {
     color: #CBD5E1 !important;
 }
 
+/* "Demo action" toast (see showDemoNotice() in main.js). Deliberately
+   NOT scoped to .dark-mode — a translucent alert-info tint read as
+   "very light"/washed out on both themes, so this uses one solid,
+   consistently-readable dark background everywhere instead. */
+.demo-toast {
+    background: rgba(15, 23, 42, 0.96) !important;
+    color: #F1F5F9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .dark-mode a:hover {
     color: #BFDBFE;
 }

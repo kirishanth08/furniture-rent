@@ -17,7 +17,7 @@ function showDemoNotice(message) {
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "demoNoticeToast";
-        toast.className = "alert alert-info shadow-sm position-fixed mb-0";
+        toast.className = "demo-toast shadow position-fixed mb-0";
         toast.style.cssText = "bottom:20px; right:20px; z-index:2000; max-width:320px;";
         toast.setAttribute("role", "alert");
         document.body.appendChild(toast);
