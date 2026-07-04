@@ -348,7 +348,14 @@ body.admin-sidebar-open .admin-sidebar-overlay {
 .admin-task small,
 .admin-table small {
     display: block;
+}
+
+.admin-task small {
     color: #64748b;
+}
+
+.admin-table small {
+    color: #475569;
 }
 
 .admin-table-wrap {
@@ -375,6 +382,14 @@ body.admin-sidebar-open .admin-sidebar-overlay {
     color: #334155;
     border-color: #e7edf6;
     padding: 16px;
+}
+
+/* Explicit colors for the customer name/email cell instead of relying
+   on inherited td color — makes sure "John Doe" / "john@example.com"
+   stay readable in both themes even if something else in the cascade
+   overrides the parent cell's color. */
+.admin-table strong {
+    color: #1E293B;
 }
 
 .admin-table tbody tr:nth-child(even) td {
@@ -458,6 +473,10 @@ body.admin-sidebar-open .admin-sidebar-overlay {
 .dark-mode .admin-task small,
 .dark-mode .admin-table small {
     color: #94A3B8 !important;
+}
+
+.dark-mode .admin-table strong {
+    color: #F8FAFC !important;
 }
 
 .dark-mode .admin-trend.text-success {
