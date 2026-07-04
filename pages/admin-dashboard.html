@@ -181,28 +181,28 @@
                             <div class="admin-panel-heading">
                                 <div>
                                     <h4>Rental Performance</h4>
-                                    <small>Current month overview</small>
+                                    <small id="rentalPerformanceSubtitle">Current month overview</small>
                                 </div>
                                 <div class="btn-group admin-filter" role="group" aria-label="Performance range">
-                                    <button class="btn btn-sm btn-primary active" type="button">Month</button>
-                                    <button class="btn btn-sm btn-outline-primary" type="button">Quarter</button>
-                                    <button class="btn btn-sm btn-outline-primary" type="button">Year</button>
+                                    <button class="btn btn-sm btn-primary active" type="button" data-range="month">Month</button>
+                                    <button class="btn btn-sm btn-outline-primary" type="button" data-range="quarter">Quarter</button>
+                                    <button class="btn btn-sm btn-outline-primary" type="button" data-range="year">Year</button>
                                 </div>
                             </div>
-                            <div class="admin-chart" aria-label="Rental performance chart">
-                                <div class="admin-bar" style="--value: 52%"><span>Living</span>
+                            <div class="admin-chart" aria-label="Rental performance chart" id="rentalPerformanceChart">
+                                <div class="admin-bar" data-month="52" data-quarter="58" data-year="63" style="--value: 52%"><span>Living</span>
                                     <div class="admin-bar-track"></div><strong>52%</strong>
                                 </div>
-                                <div class="admin-bar" style="--value: 68%"><span>Bedroom</span>
+                                <div class="admin-bar" data-month="68" data-quarter="72" data-year="75" style="--value: 68%"><span>Bedroom</span>
                                     <div class="admin-bar-track"></div><strong>68%</strong>
                                 </div>
-                                <div class="admin-bar" style="--value: 44%"><span>Study</span>
+                                <div class="admin-bar" data-month="44" data-quarter="49" data-year="55" style="--value: 44%"><span>Study</span>
                                     <div class="admin-bar-track"></div><strong>44%</strong>
                                 </div>
-                                <div class="admin-bar" style="--value: 78%"><span>Dining</span>
+                                <div class="admin-bar" data-month="78" data-quarter="81" data-year="85" style="--value: 78%"><span>Dining</span>
                                     <div class="admin-bar-track"></div><strong>78%</strong>
                                 </div>
-                                <div class="admin-bar" style="--value: 61%"><span>Storage</span>
+                                <div class="admin-bar" data-month="61" data-quarter="65" data-year="70" style="--value: 61%"><span>Storage</span>
                                     <div class="admin-bar-track"></div><strong>61%</strong>
                                 </div>
                             </div>

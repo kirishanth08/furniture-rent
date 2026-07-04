@@ -95,4 +95,43 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.remove("btn-outline-primary");
         });
     });
+
+    // ---- Rental Performance chart: Month / Quarter / Year ----
+    // The range buttons used to only toggle their own active/highlighted
+    // style — the bars and subtitle never actually changed with them.
+    const rentalChart = document.getElementById("rentalPerformanceChart");
+    const rentalSubtitle = document.getElementById("rentalPerformanceSubtitle");
+    const rentalRangeButtons = document.querySelectorAll(".admin-filter [data-range]");
+
+    const RANGE_SUBTITLES = {
+        month: "Current month overview",
+        quarter: "Current quarter overview",
+        year: "Current year overview"
+    };
+
+    if (rentalChart && rentalRangeButtons.length) {
+
+        const bars = rentalChart.querySelectorAll(".admin-bar");
+
+        rentalRangeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const range = button.getAttribute("data-range");
+
+                bars.forEach((bar) => {
+                    const value = bar.getAttribute("data-" + range);
+                    if (value === null) return;
+
+                    bar.style.setProperty("--value", value + "%");
+
+                    const label = bar.querySelector("strong");
+                    if (label) label.textContent = value + "%";
+                });
+
+                if (rentalSubtitle && RANGE_SUBTITLES[range]) {
+                    rentalSubtitle.textContent = RANGE_SUBTITLES[range];
+                }
+            });
+        });
+
+    }
 });
