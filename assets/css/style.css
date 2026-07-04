@@ -2762,6 +2762,12 @@ body.dark-mode {
     border-color: rgba(255, 193, 7, 0.4) !important;
 }
 
+.dark-mode .alert-info {
+    background: rgba(13, 202, 240, 0.18) !important;
+    color: #79dfef !important;
+    border-color: rgba(13, 202, 240, 0.4) !important;
+}
+
 /* Same problem on the login page's "SSL Secured / Safe Login /
    Verified Users" badges: light #f8f9fa background, text forced
    light by the generic rule above. */

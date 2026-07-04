@@ -2,7 +2,47 @@
 FURNIRENT MAIN JS
 ====================================================*/
 
+/*====================================================
+DEMO-ONLY ACTION NOTICE
+Dashboard action buttons (ticket View/Closed/Follow Up,
+invoice Download, Pay Now, rental Extend/Return) have no
+backend to call, so instead of linking to a dead page
+they show this quick "static demo" notice.
+====================================================*/
+
+function showDemoNotice(message) {
+
+    let toast = document.getElementById("demoNoticeToast");
+
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "demoNoticeToast";
+        toast.className = "alert alert-info shadow-sm position-fixed mb-0";
+        toast.style.cssText = "bottom:20px; right:20px; z-index:2000; max-width:320px;";
+        toast.setAttribute("role", "alert");
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message ||
+        "This is a static front-end demo — no backend is connected, so this action isn't available.";
+
+    toast.style.display = "block";
+
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => {
+        toast.style.display = "none";
+    }, 3000);
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".demo-action").forEach((el) => {
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
+            showDemoNotice();
+        });
+    });
 
     /*====================================================
     NAVBAR AUTH STATE
