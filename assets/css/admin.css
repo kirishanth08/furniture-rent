@@ -200,9 +200,17 @@ body.admin-sidebar-open .admin-sidebar-overlay {
 
 /* Match each card's accent border to its icon color instead of a
    single repeated blue stripe on every card. */
-.admin-stat-card:has(.bg-success) { border-left-color: #22c55e; }
-.admin-stat-card:has(.bg-warning) { border-left-color: #f59e0b; }
-.admin-stat-card:has(.bg-danger)  { border-left-color: #ef4444; }
+.admin-stat-card:has(.bg-success) {
+    border-left-color: #22c55e;
+}
+
+.admin-stat-card:has(.bg-warning) {
+    border-left-color: #f59e0b;
+}
+
+.admin-stat-card:has(.bg-danger) {
+    border-left-color: #ef4444;
+}
 
 .admin-stat-card .dashboard-icon {
     margin: 0 0 18px;
@@ -678,6 +686,7 @@ body.admin-sidebar-open .admin-sidebar-overlay {
 }
 
 @media (max-width: 575px) {
+
     .admin-wrapper .dashboard-card,
     .admin-wrapper .dashboard-panel {
         padding: 20px;
@@ -707,4 +716,42 @@ body.admin-sidebar-open .admin-sidebar-overlay {
         padding: 13px 14px;
         font-size: 14px;
     }
+}
+
+/* ---------- Fix Latest Rentals Table ---------- */
+
+.admin-table td,
+.admin-table th {
+    color: #1e293b !important;
+    vertical-align: middle;
+}
+
+.admin-table td strong {
+    display: block;
+    color: #111827 !important;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.admin-table td small {
+    display: block;
+    margin-top: 4px;
+    color: #64748b !important;
+    font-size: 13px;
+}
+
+.admin-table tbody td {
+    background: #ffffff !important;
+    color: #334155 !important;
+}
+
+.admin-table tbody tr:nth-child(even) td {
+    background: #f8fafc !important;
+}
+
+.admin-table thead th {
+    background: #172554 !important;
+    color: #ffffff !important;
+    font-weight: 700;
 }
