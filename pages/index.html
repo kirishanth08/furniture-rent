@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <title>FurniRent | Premium Furniture Rental</title>
+    <meta name="description"
+        content="Premium Furniture Rental HTML Template built with Bootstrap 5. Rent modern furniture with flexible plans.">
+    <meta name="keywords" content="Furniture Rental, Home Furniture, Bootstrap Template">
+    <meta name="author" content="FurniRent">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="FurniRent - Premium Furniture Rental">
+
+    <meta property="og:description" content="Premium Furniture Rental HTML Template">
+
+    <meta property="og:image" content="../assets/images/hero/sofa.webp">
+
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.furnirent.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "FurniRent",
+        "image": "assets/images/hero/furnished-apartment.webp",
+        "description": "Premium Furniture Rental Service for students and professionals.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bangalore",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+</head>
+
+<body class="">
+
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section section-padding">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+
+                <div class="col-lg-6 col-md-12 text-center text-lg-start">
+                    <span class="hero-label badge bg-light text-primary mb-3 px-3 py-2 border rounded-pill">Trusted By
+                        25,000+ Happy Customers</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-3" style="font-family: 'Merriweather', serif;">Rent
+                        Beautiful Furniture <br><span class="text-primary">For Your Dream Home</span></h1>
+                    <p class="hero-description text-muted lead mb-4 mx-auto mx-lg-0">
+                        Furnish your home with premium furniture without the burden of ownership. Flexible rental plans,
+                        free delivery, professional installation and hassle-free returns.
+                    </p>
+
+                    <div
+                        class="hero-buttons d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                        <a href="catalog.html" class="btn btn-primary btn-lg fw-semibold px-4 text-white">Browse
+                            Furniture</a>
+                        <a href="pricing.html" class="btn btn-outline-secondary btn-lg fw-semibold px-4">Rental
+                            Plans</a>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-truck-fast text-primary fs-4"></i>
+                            <div>
+                                <h6 style="font-family: 'Merriweather', serif;">Free Delivery</h6>
+                                <span>Across Service Areas</span>
+                            </div>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-screwdriver-wrench text-primary fs-4"></i>
+                            <div>
+                                <h6 style="font-family: 'Merriweather', serif;">Free Installation</h6>
+                                <span>Professional Setup</span>
+                            </div>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fa-solid fa-arrows-rotate text-primary fs-4"></i>
+                            <div>
+                                <h6 style="font-family: 'Merriweather', serif;">Easy Swap</h6>
+                                <span>Upgrade Anytime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero-image-wrapper">
+                        <img src="../assets/images/hero/sofa.webp" alt="Modern Furnished Apartment" class="hero-image"
+                            loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works section-padding" style="background-color: var(--color-section);">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">How It Works</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Renting Furniture Is Simple</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card h-100 position-relative p-4">
+                        <div
+                            class="step-number position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2 shadow border border-white border-2">
+                            01</div>
+                        <i class="fa-solid fa-couch text-secondary fs-1 mt-3 mb-3"></i>
+                        <h4 class="fw-bold fs-5">Choose Furniture</h4>
+                        <p class="text-muted mb-0 text-sm">Browse premium furniture from our curated collection.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card h-100 position-relative p-4">
+                        <div
+                            class="step-number position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2 shadow border border-white border-2">
+                            02</div>
+                        <i class="fa-solid fa-calendar-days text-secondary fs-1 mt-3 mb-3"></i>
+                        <h4 class="fw-bold fs-5">Set Duration</h4>
+                        <p class="text-muted mb-0 text-sm">Select 3, 6, 9 or 12 months rental duration easily.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card h-100 position-relative p-4">
+                        <div
+                            class="step-number position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2 shadow border border-white border-2">
+                            03</div>
+                        <i class="fa-solid fa-truck-fast text-secondary fs-1 mt-3 mb-3"></i>
+                        <h4 class="fw-bold fs-5">Delivery & Setup</h4>
+                        <p class="text-muted mb-0 text-sm">We deliver and professionally install your furniture.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card h-100 position-relative p-4">
+                        <div
+                            class="step-number position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2 shadow border border-white border-2">
+                            04</div>
+                        <i class="fa-solid fa-arrow-rotate-left text-secondary fs-1 mt-3 mb-3"></i>
+                        <h4 class="fw-bold fs-5">Return Or Keep</h4>
+                        <p class="text-muted mb-0 text-sm">Return, renew or purchase your rented furniture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories section-padding">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">Categories</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Find Furniture For Every Room</h2>
+                <p class="text-muted">Browse our furniture collection designed for modern living.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/living-room.webp" alt="Living Room Furniture Set"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Living Room</h4>
+                                <p class="text-muted">Sofas, TV Units, Coffee Tables & Recliners</p>
+                            </div>
+                            <a href="catalog.html?room=living-room"
+                                class="text-decoration-none fw-semibold text-primary mt-2">Explore <i
+                                    class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/bedroom.webp" alt="Bedroom Furniture Set"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Bedroom</h4>
+                                <p class="text-muted">Beds, Wardrobes & Mattresses</p>
+                            </div>
+                            <a href="catalog.html?room=bedroom"
+                                class="text-decoration-none fw-semibold text-primary mt-2">Explore <i
+                                    class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/study.webp" alt="Study Room Furniture" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Study</h4>
+                                <p class="text-muted">Study Tables, Chairs & Bookshelves</p>
+                            </div>
+                            <a href="catalog.html?room=study"
+                                class="text-decoration-none fw-semibold text-primary mt-2">Explore <i
+                                    class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/kitchen.webp" alt="Kitchen & Dining Furniture"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Kitchen & Dining</h4>
+                                <p class="text-muted">Dining Tables, Chairs, Kitchen Cabinets & Dining Accessories.</p>
+                            </div>
+                            <a href="catalog.html?room=dining"
+                                class="text-decoration-none fw-semibold text-primary mt-2">Explore
+                                Collection <i class="fa-solid fa-arrow-right-long ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/storageshoe.webp" alt="Storage Furniture"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Storage</h4>
+                                <p class="text-muted">Wardrobes, Cabinets, Shoe Racks & Storage Units.</p>
+                            </div>
+                            <a href="catalog.html?category=storage"
+                                class="text-decoration-none fw-semibold text-primary mt-2">Explore
+                                Collection <i class="fa-solid fa-arrow-right-long ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="category-card h-100 d-flex flex-column">
+                        <div class="category-image">
+                            <img src="../assets/images/categories/fullyhome.webp" alt="Complete Furniture Package"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="category-content flex-grow-1 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 class="fw-bold">Complete Packages</h4>
+                                <p class="text-muted">Fully Furnished Home Packages for Apartments & Villas.</p>
+                            </div>
+                            <a href="catalog.html" class="text-decoration-none fw-semibold text-primary mt-2">Explore
+                                Collection <i class="fa-solid fa-arrow-right-long ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-rentals section-padding" style="background-color: var(--color-section);">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">Featured Rentals</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Most Popular Furniture Rentals</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/VbrhgioNfnh7xfQ54GV9gcCtbAhS32kS52AGfiljzV8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODF3cFdLMU1RbUwu/anBn"
+                                alt="Modern Sofa" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Living
+                                Room</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-muted ms-1">(145)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">Modern Luxury Sofa</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Comfortable 3-Seater Sofa with Premium Fabric
+                                Finish.</p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹2,499</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=modern-luxury-sofa"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/YhGXwZWb6Ceym-rpTXeF5Dfi5JvPR0p_7RzrmyL60w8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFOYXM4bngydkwu/anBn"
+                                alt="King Size Bed" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Bedroom</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-muted ms-1">(102)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">King Size Bed</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Wooden Bed with Premium Headboard Design.</p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹1,999</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=king-size-bed"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/GhkjGx0jq1hyM4AKKGOMBdz6DwpY73O_1Wpi3tyAkyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/LnpvaG9lY29tbWVy/Y2UuY29tL3Byb2R1/Y3QtaW1hZ2VzL09x/b09QMzdubXAucG5n/LzQ3MzIzOTAwMDAw/MDA1NzAyMC80MDB4/NDAwP3N0b3JlZnJv/bnRfZG9tYWluPXd3/dy52aWtpbnRlcmlv/LmNvbQ"
+                                alt="6-Seater Dining Set" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Dining</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-muted ms-1">(87)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">6-Seater Dining Set</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Elegant Wooden Dining Table with Matching Chairs.
+                            </p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹2,299</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=dining-set-6-seater"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/-IC9hhIRuP4cQm99Us6vYp16hMPvtNqkoi84t1yb9zs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFJNWdncUJ4c0wu/anBn"
+                                alt="Executive Study Desk" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Study</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                                <span class="text-muted ms-1">(94)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">Executive Study Desk</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Spacious wooden desk for work and study.</p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹1,299</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=executive-study-desk"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/gKqpd37qSFVRf4sZsAvGbDPBg01oD6vPHY6qSIqNjY4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZWNkbi45OWFjcmVz/LmNvbS8vbWljcm9z/aXRlL3dwLWNvbnRl/bnQvYmxvZ3MuZGly/LzYxNjEvZmlsZXMv/MjAyMy8wNy9Db250/ZW1wb3JhcnktU2xp/ZGluZy1XYXJkcm9i/ZXMtMS5qcGc"
+                                alt="Sliding Wardrobe" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Storage</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-muted ms-1">(121)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">Sliding Wardrobe</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Premium storage wardrobe with mirror finish.</p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹1,799</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=sliding-wardrobe"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="product-card h-100 d-flex flex-column p-0">
+                        <div class="product-image">
+                            <img src="https://imgs.search.brave.com/S8fZQl53OLpBO_-ik-l-kAU6suBplnogxIGV7P-ZawM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idW5u/eS13cC1wdWxsem9u/ZS1kc3BmeGhsMWJ6/LmItY2RuLm5ldC93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8x/MS9Nb29uLVN0YXIt/SG9saWRheS1Ib21l/LmpwZw"
+                                alt="Complete Home Package" loading="lazy" decoding="async">
+                            <span
+                                class="product-category badge bg-light text-dark position-absolute top-0 start-0 m-3 shadow-sm border">Complete
+                                Package</span>
+                        </div>
+                        <div class="product-content flex-grow-1 d-flex flex-column">
+                            <div class="product-rating text-warning mb-2 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span class="text-muted ms-1">(173)</span>
+                            </div>
+                            <h4 class="fw-bold fs-5">Complete Home Package</h4>
+                            <p class="text-muted flex-grow-1 text-sm">Furnish your complete apartment with one plan.</p>
+                            <div
+                                class="product-footer d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                <div>
+                                    <h5 class="mb-0 text-primary fw-bold">₹4,999</h5><small class="text-muted">/
+                                        Month</small>
+                                </div>
+                                <a href="item-details.html?id=complete-home-package"
+                                    class="btn btn-primary btn-sm px-3 py-2 fw-semibold text-white">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="catalog.html" class="btn btn-outline-primary btn-lg fw-semibold px-5">View All Furniture</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-rent section-padding bg-light">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">Why Rent With Us</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Everything You Need For A Better Rental
+                    Experience</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card h-100 d-flex flex-column align-items-center justify-content-center p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fa-solid fa-truck-fast fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold fs-5">Free Delivery</h4>
+                        <p class="text-muted mb-0 text-sm">Fast delivery and professional installation included.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card h-100 d-flex flex-column align-items-center justify-content-center p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fa-solid fa-repeat fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold fs-5">Easy Swap</h4>
+                        <p class="text-muted mb-0 text-sm">Upgrade or change furniture whenever needs change.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card h-100 d-flex flex-column align-items-center justify-content-center p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fa-solid fa-shield-halved fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold fs-5">Damage Protection</h4>
+                        <p class="text-muted mb-0 text-sm">All rental plans include free protection coverage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card h-100 d-flex flex-column align-items-center justify-content-center p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 d-inline-block">
+                            <i class="fa-solid fa-headset fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold fs-5">24×7 Support</h4>
+                        <p class="text-muted mb-0 text-sm">Dedicated customer support available whenever needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section section-padding" style="background-color: var(--color-section);">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <span class="section-subtitle d-block mb-2">Testimonials</span>
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">What Our Customers Say</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 p-4 d-flex flex-column justify-content-between bg-white">
+                        <div>
+                            <div class="testimonial-rating text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="text-muted fst-italic">"Excellent furniture quality and outstanding delivery
+                                service. Everything arrived on time."</p>
+                        </div>
+                        <div class="testimonial-user d-flex align-items-center mt-3 pt-3 border-top">
+                            <img src="https://imgs.search.brave.com/h43VDVif9WaFCXNe1rkzVOa5V0qzcRM6Rl6mI1onkqs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWtl/cGVyc29uLWZhY2Uu/b3NzLXVzLXdlc3Qt/MS5hbGl5dW5jcy5j/b20vRmFjZS9tYWxl/L21hbGUyMDE2MTA4/NjI4NzI4MzQ3OC5q/cGc"
+                                alt="Sarah Johnson" class="rounded-circle me-3 border" width="50" height="50"
+                                style="object-fit: cover;" loading="lazy" decoding="async">
+                            <div>
+                                <h5 class="mb-0 fs-6 fw-bold">Sarah Johnson</h5><span class="text-muted text-sm"
+                                    style="font-size: 13px;">Interior Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 p-4 d-flex flex-column justify-content-between bg-white">
+                        <div>
+                            <div class="testimonial-rating text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="text-muted fst-italic">"Renting furniture saved me a lot of money while moving to
+                                Bangalore. Super smooth process!"</p>
+                        </div>
+                        <div class="testimonial-user d-flex align-items-center mt-3 pt-3 border-top">
+                            <img src="https://imgs.search.brave.com/_D5fdLiMaP1Ki6vFAY8HMZgToAxC9A2XePepg1CgXsQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWtl/cGVyc29uLWZhY2Uu/b3NzLXVzLXdlc3Qt/MS5hbGl5dW5jcy5j/b20vRmFjZS9mZW1h/bGUvZmVtYWxlMjAx/NzEwMjYyNjY0NzYy/NTcuanBn"
+                                alt="David Martin" class="rounded-circle me-3 border" width="50" height="50"
+                                style="object-fit: cover;" loading="lazy" decoding="async">
+                            <div>
+                                <h5 class="mb-0 fs-6 fw-bold">David Martin</h5><span class="text-muted text-sm"
+                                    style="font-size: 13px;">Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card h-100 p-4 d-flex flex-column justify-content-between bg-white">
+                        <div>
+                            <div class="testimonial-rating text-warning mb-3"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="text-muted fst-italic">"Great customer support and flexible rental plans. Highly
+                                recommended for students and professionals."</p>
+                        </div>
+                        <div class="testimonial-user d-flex align-items-center mt-3 pt-3 border-top">
+                            <img src="https://imgs.search.brave.com/pn_Zw2pAM0mkNJGnUDHFLMcVgs2YnNpx65c_TGzJjBI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWtl/cGVyc29uLWZhY2Uu/b3NzLXVzLXdlc3Qt/MS5hbGl5dW5jcy5j/b20vRmFjZS9mZW1h/bGUvZmVtYWxlMjAx/NTEwMjQ0MTcyNTA0/ODkuanBn"
+                                alt="Emily Wilson" class="rounded-circle me-3 border" width="50" height="50"
+                                style="object-fit: cover;" loading="lazy" decoding="async">
+                            <div>
+                                <h5 class="mb-0 fs-6 fw-bold">Emily Wilson</h5><span class="text-muted text-sm"
+                                    style="font-size: 13px;">Marketing Executive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section section-padding bg-primary text-white">
+        <div class="container">
+            <div
+                class="newsletter-box bg-white bg-opacity-10 p-5 rounded-4 border border-light border-opacity-25 shadow">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+                        <h2 class="fw-bold mb-2" style="font-family: 'Merriweather', serif;">Subscribe To Our Newsletter
+                        </h2>
+                        <p class="mb-0 text-white-50">Receive rental offers, furniture updates and interior inspiration.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form" action="404.html" method="GET">
+                            <div class="input-group input-group-lg shadow-sm">
+                                <input type="email" name="EMAIL" class="form-control border-0"
+                                    placeholder="Enter your email address" required aria-label="Email Address">
+                                <button class="btn btn-warning fw-bold px-4 text-dark" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="404.html" aria-label="Facebook"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="Instagram"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Twitter"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Study</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Storage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+
+</body>
+
+</html>

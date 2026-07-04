@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <title>Contact Us | FurniRent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body class="">
+
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+CONTACT HERO
+========================================== -->
+
+    <section class="page-header section-padding">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8 text-center">
+
+                    <span class="section-subtitle">
+
+                        Contact Us
+
+                    </span>
+
+                    <h1 class="hero-title mt-3">
+
+                        We'd Love To Hear
+                        From You
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Have questions about furniture rentals,
+                        pricing, delivery or support?
+                        Our team is always ready to help.
+
+                    </p>
+
+                    <nav class="mt-4">
+
+                        <ol class="breadcrumb justify-content-center">
+
+                            <li class="breadcrumb-item">
+
+                                <a href="index.html">
+
+                                    Home
+
+                                </a>
+
+                            </li>
+
+                            <li class="breadcrumb-item active">
+
+                                Contact
+
+                            </li>
+
+                        </ol>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==========================================
+CONTACT INFORMATION
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Call Us
+
+                        </h5>
+
+                        <p>
+
+                            +91 98765 43210
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Email
+
+                        </h5>
+
+                        <p>
+
+                            support@furnirent.com
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="hero-feature-card">
+
+                        <div class="hero-feature-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+                        <h5>
+
+                            Visit Office
+
+                        </h5>
+
+                        <p>
+
+                            Bangalore,
+                            Karnataka,
+                            India
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==========================================
+CONTACT FORM
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <!-- Contact Form -->
+
+                <div class="col-lg-7">
+
+                    <div class="pricing-plan">
+
+                        <span class="section-subtitle">
+
+                            Send Message
+
+                        </span>
+
+                        <h2 class="mt-3 mb-4">
+
+                            Let's Start A Conversation
+
+                        </h2>
+
+                        <form id="contactForm">
+
+                            <div class="row g-4">
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+
+                                        Full Name
+
+                                    </label>
+
+                                    <input type="text" class="form-control form-control-lg" id="contactName"
+                                        placeholder="Enter your name" required>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+
+                                        Email Address
+
+                                    </label>
+
+                                    <input type="email" class="form-control form-control-lg" id="contactEmail"
+                                        placeholder="Enter your email" required>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+
+                                        Phone Number
+
+                                    </label>
+
+                                    <input type="tel" class="form-control form-control-lg" id="contactPhone"
+                                        placeholder="Enter your phone">
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+
+                                        Subject
+
+                                    </label>
+
+                                    <input type="text" class="form-control form-control-lg" id="contactSubject" placeholder="Subject">
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <label class="form-label">
+
+                                        Message
+
+                                    </label>
+
+                                    <textarea class="form-control" rows="6" id="contactMessage" placeholder="Write your message..."
+                                        required></textarea>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+
+                                        <i class="fa-solid fa-paper-plane me-2"></i>
+
+                                        Send Message
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <!-- Google Map -->
+
+                <div class="col-lg-5">
+
+                    <div class="pricing-plan h-100">
+
+                        <span class="section-subtitle">
+
+                            Visit Us
+
+                        </span>
+
+                        <h3 class="mt-3 mb-4">
+
+                            Our Office Location
+
+                        </h3>
+
+                        <iframe src="https://www.google.com/maps?q=Bangalore&output=embed" width="100%" height="420"
+                            style="border:0;border-radius:16px;" loading="lazy" decoding="async">
+
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==========================================
+BUSINESS HOURS & WHY CHOOSE US
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Business Hours -->
+
+                <div class="col-lg-6">
+
+                    <div class="pricing-plan h-100">
+
+                        <span class="section-subtitle">
+                            Business Hours
+                        </span>
+
+                        <h2 class="mt-3 mb-4">
+
+                            We're Available
+
+                        </h2>
+
+                        <ul class="list-group business-hours">
+
+                            <li class="list-group-item d-flex justify-content-between">
+
+                                <span>Monday - Friday</span>
+
+                                <strong>09:00 AM - 08:00 PM</strong>
+
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+
+                                <span>Saturday</span>
+
+                                <strong>10:00 AM - 06:00 PM</strong>
+
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+
+                                <span>Sunday</span>
+
+                                <strong>Closed</strong>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Why Choose -->
+
+                <div class="col-lg-6">
+
+                    <div class="pricing-plan h-100">
+
+                        <span class="section-subtitle">
+
+                            Why FurniRent
+
+                        </span>
+
+                        <h2 class="mt-3 mb-4">
+
+                            Why Customers Trust Us
+
+                        </h2>
+
+                        <div class="d-flex mb-4">
+
+                            <i class="fa-solid fa-circle-check text-success fs-4 me-3 mt-1"></i>
+
+                            <div>
+
+                                <h5>Premium Furniture</h5>
+
+                                <p class="mb-0">
+
+                                    High-quality furniture inspected before every rental.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex mb-4">
+
+                            <i class="fa-solid fa-truck-fast text-primary fs-4 me-3 mt-1"></i>
+
+                            <div>
+
+                                <h5>Fast Delivery</h5>
+
+                                <p class="mb-0">
+
+                                    Same-day and next-day delivery available in major cities.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex">
+
+                            <i class="fa-solid fa-headset text-warning fs-4 me-3 mt-1"></i>
+
+                            <div>
+
+                                <h5>24/7 Customer Support</h5>
+
+                                <p class="mb-0">
+
+                                    Our support team is always ready to help you.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==========================================
+CONTACT FAQ
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+                    Frequently Asked Questions
+                </span>
+
+                <h2 class="hero-title mt-3">
+                    Need Some Help?
+                </h2>
+
+                <p class="hero-description">
+
+                    Find quick answers to the most common
+                    questions about FurniRent.
+
+                </p>
+
+            </div>
+
+            <div class="accordion contact-faq" id="contactFAQ">
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#contact1">
+
+                            How long does delivery take?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="contact1" class="accordion-collapse collapse show" data-bs-parent="#contactFAQ">
+
+                        <div class="accordion-body">
+
+                            Most orders are delivered within
+                            24 to 48 hours.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#contact2">
+
+                            Is installation free?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="contact2" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. Professional installation
+                            is included with every rental.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#contact3">
+
+                            Can I return furniture early?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="contact3" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+
+                        <div class="accordion-body">
+
+                            Yes. Early return options are
+                            available depending on your plan.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+NEWSLETTER CTA
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="pricing-cta">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-8">
+
+                        <h2>
+
+                            Stay Updated With FurniRent
+
+                        </h2>
+
+                        <p>
+
+                            Subscribe to receive furniture offers,
+                            new arrivals and exclusive rental discounts.
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <form class="d-flex gap-2" action="404.html" method="GET">
+
+                            <input type="email" name="EMAIL" class="form-control" placeholder="Your email">
+
+                            <button class="btn btn-warning" type="submit">
+
+                                Subscribe
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="404.html" aria-label="Facebook"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="Instagram"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Twitter"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Study</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Storage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+
+    <!-- ==========================================
+    MESSAGE SENT SUCCESS MODAL
+    ========================================== -->
+    <div class="modal fade" id="messageSentModal" tabindex="-1" aria-labelledby="messageSentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <div class="text-success mb-3">
+                        <i class="fa-solid fa-circle-check" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" id="messageSentModalLabel">Message Sent Successfully!</h4>
+                    <p class="text-muted mb-4">Thanks for reaching out. Our team will get back to you within 24
+                        hours.</p>
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        (() => {
+            const contactForm = document.getElementById("contactForm");
+            if (!contactForm) return;
+
+            const messageSentModalEl = document.getElementById("messageSentModal");
+            const messageSentModal = new bootstrap.Modal(messageSentModalEl);
+
+            contactForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (!contactForm.checkValidity()) {
+                    contactForm.reportValidity();
+                    return;
+                }
+
+                // In a live site this is where the message would be sent to a
+                // backend/API. For this demo we just confirm it to the user.
+                messageSentModal.show();
+                contactForm.reset();
+            });
+        })();
+    </script>
+</body>
+
+</html>

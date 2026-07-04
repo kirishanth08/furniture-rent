@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <title id="pageTitle">Product Details | FurniRent</title>
+    <meta id="pageMetaDescription" name="description"
+        content="View dimensions, materials, and flexible rental plans from 3 to 12 months.">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body class="">
+
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-primary">Home</a></li>
+                <li class="breadcrumb-item"><a href="catalog.html" class="text-decoration-none text-primary">Catalog</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" id="breadcrumbProductName">Product Details</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="item-details section-padding pt-2">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-lg-6">
+                    <div
+                        class="product-gallery bg-white rounded-4 shadow-sm border border-light overflow-hidden position-relative p-3">
+                        <span class="badge bg-secondary position-absolute top-0 start-0 m-4 shadow-sm z-1"
+                            id="productCategoryBadge">Category</span>
+                        <img id="productImage" src=""
+                            alt="Product image" class="img-fluid w-100 rounded-3"
+                            style="object-fit: cover; aspect-ratio: 4/3;" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="text-warning text-sm me-2" id="productRatingStars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-muted text-sm" id="productReviewCount">(0 Reviews)</span>
+                        </div>
+
+                        <h1 class="display-6 fw-bold mb-3" style="font-family: 'Merriweather', serif;"
+                            id="productName">Product Name</h1>
+                        <p class="text-muted lead mb-4" id="productLongDesc">Loading product details...</p>
+
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4"
+                            style="border-left: 4px solid var(--color-primary) !important;">
+
+                            <h4 class="text-primary fw-bold mb-1" id="calculatedPrice">₹0<span
+                                    class="fs-6 text-muted fw-normal"> / month</span></h4>
+                            <p class="text-muted text-sm mb-4" id="stockNote"><i
+                                    class="fa-solid fa-circle-check text-success me-1"></i> Min. rental period: 3 months
+                            </p>
+
+                            <label for="rentalDuration" class="form-label fw-bold">Select Rental Duration</label>
+                            <select class="form-select form-select-lg mb-3 border-light bg-light" id="rentalDuration">
+                                <option value="3" data-price="0" selected>3 Months (Standard Rate)</option>
+                                <option value="6" data-price="0">6 Months (Save 10%)</option>
+                                <option value="9" data-price="0">9 Months (Save 15%)</option>
+                                <option value="12" data-price="0">12 Months (Save 20%)</option>
+                            </select>
+
+                            <p class="text-sm fw-semibold text-success mb-4" id="savingsMessage">Standard base rate
+                                applied.</p>
+
+                            <button type="button" id="addToCartBtn"
+                                class="btn btn-primary btn-lg w-100 fw-bold shadow-sm"><i
+                                    class="fa-solid fa-cart-shopping me-2"></i> Add to Rental Cart</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between text-muted text-sm px-2">
+                            <span><i class="fa-solid fa-truck-fast me-1 text-primary"></i> Free Delivery</span>
+                            <span><i class="fa-solid fa-screwdriver-wrench me-1 text-primary"></i> Free Setup</span>
+                            <span><i class="fa-solid fa-shield-halved me-1 text-primary"></i> Damage Protection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion shadow-sm rounded-4 overflow-hidden border-light" id="productAccordion">
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold py-3" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true">
+                                    Dimensions & Specifications
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#productAccordion">
+                                <div class="accordion-body text-muted lh-lg" id="specDimensions">
+                                    Loading specifications...
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-3" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Materials & Quality
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#productAccordion">
+                                <div class="accordion-body text-muted lh-lg" id="specMaterials">
+                                    Loading materials...
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-3" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Care Instructions
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#productAccordion">
+                                <div class="accordion-body text-muted lh-lg" id="specCare">
+                                    Loading care instructions...
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-3" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Delivery & Damage Policy
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#productAccordion">
+                                <div class="accordion-body text-muted lh-lg" id="specDelivery">
+                                    Loading delivery & damage policy...
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-items section-padding bg-light">
+        <div class="container">
+            <div class="section-heading mb-5 text-center">
+                <h2 class="fw-bold" style="font-family: 'Merriweather', serif;">Frequently Rented Together</h2>
+            </div>
+            <div class="row g-4" id="relatedProductsRow">
+                <!-- Populated dynamically based on the current product -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/data/products-data.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        (() => {
+
+            /*====================================================
+            LOAD THE CORRECT PRODUCT
+            Reads ?id=... from the URL and renders that product's
+            own details instead of always showing the same one.
+            ====================================================*/
+
+            const params = new URLSearchParams(window.location.search);
+            const requestedId = params.get("id");
+
+            const product = (requestedId && FurniProducts.getById(requestedId))
+                || FurniProducts.getAll()[0];
+
+            const DISCOUNTS = { 3: 0, 6: 0.10, 9: 0.15, 12: 0.20 };
+            const DURATION_LABELS = {
+                3: "3 Months (Standard Rate)",
+                6: "6 Months (Save 10%)",
+                9: "9 Months (Save 15%)",
+                12: "12 Months (Save 20%)"
+            };
+
+            function formatINR(amount) {
+                return "₹" + Math.round(amount).toLocaleString("en-IN");
+            }
+
+            function renderStars(rating) {
+                let html = "";
+                for (let i = 1; i <= 5; i++) {
+                    if (rating >= i) {
+                        html += '<i class="fa-solid fa-star"></i>';
+                    } else if (rating >= i - 0.5) {
+                        html += '<i class="fa-solid fa-star-half-stroke"></i>';
+                    } else {
+                        html += '<i class="fa-regular fa-star"></i>';
+                    }
+                }
+                return html;
+            }
+
+            function populateProduct() {
+
+                document.getElementById("pageTitle").textContent = product.name + " | FurniRent";
+                const metaDesc = document.getElementById("pageMetaDescription");
+                if (metaDesc) metaDesc.setAttribute("content", "Rent the " + product.name + ". " + product.shortDesc);
+
+                document.getElementById("breadcrumbProductName").textContent = product.name;
+                document.getElementById("productCategoryBadge").textContent = product.room;
+                document.getElementById("productImage").src = product.image;
+                document.getElementById("productImage").alt = product.name;
+
+                document.getElementById("productRatingStars").innerHTML = renderStars(product.rating);
+                document.getElementById("productReviewCount").textContent = "(" + product.reviews + " Reviews)";
+
+                document.getElementById("productName").textContent = product.name;
+                document.getElementById("productLongDesc").textContent = product.longDesc;
+
+                // Rental duration options, priced from this product's base rate
+                const durationSelect = document.getElementById("rentalDuration");
+                durationSelect.innerHTML = "";
+                [3, 6, 9, 12].forEach(months => {
+                    const discounted = product.price * (1 - DISCOUNTS[months]);
+                    const opt = document.createElement("option");
+                    opt.value = String(months);
+                    opt.setAttribute("data-price", Math.round(discounted));
+                    opt.textContent = DURATION_LABELS[months];
+                    if (months === 3) opt.selected = true;
+                    durationSelect.appendChild(opt);
+                });
+
+                document.getElementById("calculatedPrice").innerHTML =
+                    formatINR(product.price) + '<span class="fs-6 text-muted fw-normal"> / month</span>';
+
+                const stockNote = document.getElementById("stockNote");
+                if (product.stock === "out") {
+                    stockNote.innerHTML = '<i class="fa-solid fa-circle-exclamation text-danger me-1"></i> Currently out of stock';
+                    const addToCartBtn = document.getElementById("addToCartBtn");
+                    addToCartBtn.disabled = true;
+                    addToCartBtn.innerHTML = '<i class="fa-solid fa-bell me-2"></i> Notify Me When Available';
+                } else {
+                    stockNote.innerHTML = '<i class="fa-solid fa-circle-check text-success me-1"></i> Min. rental period: 3 months';
+                }
+
+                document.getElementById("specDimensions").innerHTML =
+                    `<strong>Width:</strong> ${product.specs.width}<br>
+                     <strong>Depth:</strong> ${product.specs.depth}<br>
+                     <strong>Height:</strong> ${product.specs.height}<br>
+                     <strong>Capacity:</strong> ${product.specs.capacity}`;
+
+                document.getElementById("specMaterials").textContent = product.materials;
+                document.getElementById("specCare").textContent = product.care;
+                document.getElementById("specDelivery").textContent = product.delivery;
+
+                renderRelatedProducts();
+            }
+
+            function renderRelatedProducts() {
+                const row = document.getElementById("relatedProductsRow");
+                if (!row) return;
+
+                const related = FurniProducts.getRelated(product.id, 4);
+
+                row.innerHTML = related.map(item => `
+                    <div class="col-xl-3 col-md-6">
+                        <div class="product-card h-100 d-flex flex-column p-0 border bg-white"
+                            style="border-left: 4px solid var(--color-primary) !important;">
+                            <div class="product-image">
+                                <img src="${item.image}" alt="${item.name}" class="w-100" loading="lazy" decoding="async">
+                            </div>
+                            <div class="product-content flex-grow-1 d-flex flex-column p-3">
+                                <h4 class="fw-bold fs-6">${item.name}</h4>
+                                <div class="product-footer d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                                    <h5 class="mb-0 text-primary fw-bold fs-6">${formatINR(item.price)}<small class="text-muted">/mo</small></h5>
+                                    <a href="item-details.html?id=${item.id}" class="btn btn-outline-primary btn-sm fw-semibold">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join("");
+            }
+
+            populateProduct();
+
+            /*====================================================
+            ADD TO RENTAL CART
+            ====================================================*/
+
+            const addToCartBtn = document.getElementById("addToCartBtn");
+
+            if (addToCartBtn) {
+
+                addToCartBtn.addEventListener("click", () => {
+
+                    if (product.stock === "out") return;
+
+                    const durationSelect = document.getElementById("rentalDuration");
+                    const option = durationSelect ? durationSelect.options[durationSelect.selectedIndex] : null;
+
+                    const cartItem = {
+                        id: product.id,
+                        name: product.name,
+                        image: product.image,
+                        category: product.room,
+                        durationMonths: option ? option.value : "3",
+                        durationLabel: option ? option.textContent.trim() : "3 Months (Standard Rate)",
+                        monthlyPrice: option ? option.getAttribute("data-price") : String(product.price)
+                    };
+
+                    localStorage.setItem("furnirent_cart", JSON.stringify(cartItem));
+
+                    const session = FurniAuth.getSession();
+
+                    if (session && session.role === "customer") {
+                        window.location.href = "checkout.html";
+                    } else {
+                        window.location.href = "login.html?redirect=checkout.html";
+                    }
+
+                });
+            }
+
+        })();
+    </script>
+
+</body>
+
+</html>

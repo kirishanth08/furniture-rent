@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body class="">
+    <header class="sticky-top bg-white shadow-sm py-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
+                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ==========================================
+LOGIN SECTION
+========================================== -->
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <!-- LEFT -->
+
+                <div class="col-lg-6">
+
+                    <span class="section-subtitle">
+
+                        Welcome Back
+
+                    </span>
+
+                    <h1 class="hero-title mt-3">
+
+                        Access Your
+                        FurniRent Account
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Manage your rentals, payments,
+                        wishlist and profile from one place.
+
+                    </p>
+
+                    <div class="login-features mt-5">
+
+                        <div class="login-feature">
+
+                            <div class="hero-feature-icon">
+                                <i class="fa-solid fa-couch"></i>
+                            </div>
+
+                            <div>
+                                <h5>Track Your Rentals</h5>
+                                <p>View active rentals anytime.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="login-feature">
+
+                            <div class="hero-feature-icon">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+
+                            <div>
+                                <h5>Easy Payments</h5>
+                                <p>Pay rent securely online.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="login-feature">
+
+                            <div class="hero-feature-icon">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <div>
+                                <h5>24/7 Support</h5>
+                                <p>Need help? Our team is always available.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="login-trust mt-5">
+
+                        <div class="row g-3">
+
+                            <div class="col-6">
+
+                                <div class="trust-box">
+
+                                    <h3>15K+</h3>
+
+                                    <p>Happy Customers</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="trust-box">
+
+                                    <h3>500+</h3>
+
+                                    <p>Furniture Items</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="trust-box">
+
+                                    <h3>30+</h3>
+
+                                    <p>Cities Served</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="trust-box">
+
+                                    <h3>98%</h3>
+
+                                    <p>Positive Reviews</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+
+                <div class="col-lg-6">
+
+                    <div class="login-card">
+
+                        <h2 class="mb-4">
+
+                            Login
+
+                        </h2>
+
+                        <div class="demo-credentials-box mb-4">
+                            <i class="fa-solid fa-circle-info me-2"></i>
+                            <strong>Demo credentials:</strong>
+                            customer@furnirent.com / Customer@123
+                        </div>
+
+                        <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+                        <form id="loginForm">
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+
+                                    Email Address
+
+                                </label>
+
+                                <input type="email" id="loginEmail" class="form-control form-control-lg"
+                                    placeholder="Enter email" required>
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Password
+
+                                </label>
+
+                                <div class="password-box">
+
+                                    <input type="password" id="loginPassword" class="form-control form-control-lg"
+                                        placeholder="Enter password" required minlength="6">
+
+                                    <button type="button" class="password-toggle" onclick="toggleLoginPassword()">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-4">
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input" type="checkbox">
+
+                                    <label class="form-check-label">
+
+                                        Remember Me
+
+                                    </label>
+
+                                </div>
+
+                                <a href="#">
+
+                                    Forgot Password?
+
+                                </a>
+
+                            </div>
+
+                            <button class="btn btn-primary btn-lg w-100">
+
+                                Login
+
+                            </button>
+
+                            <hr class="my-4">
+
+                            <div class="security-badges mt-4">
+
+                                <div>
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    SSL Secured
+
+                                </div>
+
+                                <div>
+
+                                    <i class="fa-solid fa-shield-halved"></i>
+
+                                    Safe Login
+
+                                </div>
+
+                                <div>
+
+                                    <i class="fa-solid fa-user-check"></i>
+
+                                    Verified Users
+
+                                </div>
+
+                            </div>
+
+                            <p class="text-center mt-4">
+
+                                Don't have an account?
+
+                                <a href="register.html" id="loginToRegisterLink">
+
+                                    Register
+
+                                </a>
+
+                            </p>
+
+                            <p class="text-center mt-2">
+
+                                <a href="admin-login.html" class="text-decoration-none fw-semibold">
+
+                                    <i class="fa-solid fa-user-shield me-1"></i>
+
+                                    Login as Admin
+
+                                </a>
+
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+LOGIN BENEFITS
+========================================== -->
+
+    <section class="section-padding pt-0">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-plan text-center h-100">
+
+                        <div class="hero-feature-icon mx-auto">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <h4 class="mt-4">
+
+                            Secure Login
+
+                        </h4>
+
+                        <p>
+
+                            Your account is protected using modern
+                            security standards and encrypted access.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-plan text-center h-100">
+
+                        <div class="hero-feature-icon mx-auto">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                        </div>
+
+                        <h4 class="mt-4">
+
+                            Easy Payments
+
+                        </h4>
+
+                        <p>
+
+                            Manage your monthly rentals and invoices
+                            from one secure dashboard.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="pricing-plan text-center h-100">
+
+                        <div class="hero-feature-icon mx-auto">
+
+                            <i class="fa-solid fa-headset"></i>
+
+                        </div>
+
+                        <h4 class="mt-4">
+
+                            24/7 Support
+
+                        </h4>
+
+                        <p>
+
+                            Need help? Our support team is available
+                            whenever you need assistance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
+                        families aiming for a beautiful home.</p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="404.html" aria-label="Facebook"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="Instagram"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Twitter"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Study</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Storage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        (() => {
+            const form = document.getElementById("loginForm");
+            const alertBox = document.getElementById("loginAlert");
+
+            const redirectParam = new URLSearchParams(window.location.search).get("redirect");
+            const registerLink = document.getElementById("loginToRegisterLink");
+            if (registerLink && redirectParam) {
+                registerLink.href = "register.html?redirect=" + encodeURIComponent(redirectParam);
+            }
+
+            if (!form) return;
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById("loginEmail").value;
+                const password = document.getElementById("loginPassword").value;
+
+                const result = FurniAuth.login(email, password, "customer");
+
+                if (result.success) {
+                    const redirectTo = new URLSearchParams(window.location.search).get("redirect");
+                    window.location.href = redirectTo ? redirectTo : "dashboard-home.html";
+                } else {
+                    alertBox.textContent = result.message;
+                    alertBox.classList.remove("d-none");
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

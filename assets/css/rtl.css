@@ -1,0 +1,115 @@
+/*====================================================
+FURNIRENT RTL (RIGHT-TO-LEFT) OVERRIDES
+Applies only when <html dir="rtl">. Most Bootstrap 5
+utilities (ms-*, me-*, text-start, text-end, float-start,
+float-end) already flip automatically via logical
+properties. These rules cover the custom, hard-coded
+left/right CSS in style.css and admin.css.
+====================================================*/
+
+[dir="rtl"] {
+    text-align: right;
+}
+
+/* Pricing card feature list (padding-left: 0) */
+[dir="rtl"] .pricing-card ul {
+    padding-left: 1rem;
+    padding-right: 0;
+}
+
+/* Plan feature check icons (margin-right: 10px) */
+[dir="rtl"] .plan-features i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Comparison table first column alignment */
+[dir="rtl"] .comparison-table th:first-child {
+    text-align: right;
+}
+
+/* Login/Register security badge icons (margin-right: 8px) */
+[dir="rtl"] .security-badges i {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Register benefits list (padding-left: 0) */
+[dir="rtl"] .register-benefits ul {
+    padding-left: 1rem;
+    padding-right: 0;
+}
+
+/* Admin accent-border cards: mirror the stripe to the right edge */
+[dir="rtl"] .admin-stat-card,
+[dir="rtl"] .admin-panel {
+    border-left: 1px solid #dfe6f2;
+    border-right: 5px solid var(--color-primary);
+}
+
+[dir="rtl"] .admin-stat-card:has(.bg-success) {
+    border-left-color: #dfe6f2;
+    border-right-color: #22c55e;
+}
+
+[dir="rtl"] .admin-stat-card:has(.bg-warning) {
+    border-left-color: #dfe6f2;
+    border-right-color: #f59e0b;
+}
+
+[dir="rtl"] .admin-stat-card:has(.bg-danger) {
+    border-left-color: #dfe6f2;
+    border-right-color: #ef4444;
+}
+
+[dir="rtl"] .admin-stat-card {
+    text-align: right;
+}
+
+/* Directional icons that should visually mirror in RTL */
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-angle-left,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-caret-left,
+[dir="rtl"] .fa-caret-right {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+/* Dropdown/carousel controls positioned via left/right offsets */
+[dir="rtl"] .password-toggle {
+    left: 16px;
+    right: auto;
+}
+
+/* Toast / badge corner anchors that used start/end already flip on
+   their own; this catches any remaining hard-left admin sidebar
+   scrollbar quirk on RTL */
+[dir="rtl"] .admin-sidebar {
+    text-align: right;
+}
+
+/* Customer dashboard shell: mirror the sidebar/main split and align
+   menu icons/text the same way the admin dashboard already does. */
+[dir="rtl"] .dashboard-wrapper {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard-sidebar {
+    text-align: right;
+}
+
+[dir="rtl"] .dashboard-menu a {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard-topbar {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard-user {
+    flex-direction: row-reverse;
+}

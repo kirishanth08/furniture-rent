@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3F51B5">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Admin Dashboard | FurniRent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body class="admin-page">
+    <header class="sticky-top bg-white shadow-sm py-2 admin-site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
+                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="catalog.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
+                            aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon text-dark"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
+                            aria-label="Switch to RTL layout">
+                            <i class="fa-solid fa-language text-dark"></i>
+                        </button>
+                        <span id="authButtons" class="d-flex align-items-center gap-2">
+                            <a href="admin-login.html" id="adminLogoutBtn"
+                                class="btn btn-outline-primary fw-semibold">Logout</a>
+                            <a href="dashboard-home.html" class="btn btn-warning fw-semibold text-dark">Customer View</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="admin-sidebar-overlay" id="adminSidebarOverlay" aria-hidden="true"></div>
+
+    <div class="dashboard-wrapper admin-wrapper">
+        <aside class="dashboard-sidebar admin-sidebar" id="adminSidebar" aria-label="Admin navigation">
+            <div class="dashboard-logo admin-sidebar-head">
+                <h3>Furni<span>Rent</span></h3>
+                <button class="admin-sidebar-close" type="button" id="adminSidebarClose" aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="dashboard-menu">
+                <li><a class="active" href="admin-dashboard.html" title="Dashboard"><i
+                            class="fa-solid fa-chart-line"></i> <span class="link-text">Dashboard</span></a></li>
+                <li><a href="#inventory" title="Inventory"><i class="fa-solid fa-couch"></i> <span
+                            class="link-text">Inventory</span></a></li>
+                <li><a href="#customers" title="Customers"><i class="fa-solid fa-users"></i> <span
+                            class="link-text">Customers</span></a></li>
+                <li><a href="#rentals" title="Rentals"><i class="fa-solid fa-file-signature"></i> <span
+                            class="link-text">Rentals</span></a></li>
+                <li><a href="#payments" title="Payments"><i class="fa-solid fa-credit-card"></i> <span
+                            class="link-text">Payments</span></a></li>
+                <li><a href="dashboard-home.html" title="Customer Dashboard"><i class="fa-solid fa-user"></i> <span
+                            class="link-text">Customer Dashboard</span></a></li>
+                <li><a href="index.html" title="Back Website"><i class="fa-solid fa-arrow-left"></i> <span
+                            class="link-text">Back Website</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main admin-main">
+            <div class="dashboard-topbar admin-topbar">
+                <div class="admin-title-group">
+                    <button class="admin-sidebar-toggle" type="button" id="adminSidebarToggle"
+                        aria-controls="adminSidebar" aria-expanded="false" aria-label="Open admin sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div>
+                        <span class="section-subtitle">Admin panel</span>
+                        <h2>Dashboard</h2>
+                        <p>Manage rentals, inventory, payments and service work from one clean workspace.</p>
+                    </div>
+                </div>
+                <div class="admin-topbar-actions">
+                    <label class="admin-search" for="adminSearch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="adminSearch" type="search" placeholder="Search customers, products, rentals"
+                            aria-label="Search admin records">
+                    </label>
+                    <a class="btn btn-primary admin-add-btn" href="catalog.html"><i class="fa-solid fa-plus me-2"></i>Add
+                        Item</a>
+                    <div class="dashboard-user admin-user-card">
+                        <div class="admin-avatar">A</div>
+                        <div>
+                            <strong>Admin</strong>
+                            <small>Operations Lead</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="dashboard-content admin-content">
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-card admin-stat-card">
+                            <div class="dashboard-icon bg-primary"><i class="fa-solid fa-users"></i></div>
+                            <h2>1,458</h2>
+                            <p>Total Customers</p>
+                            <span class="admin-trend text-success"><i class="fa-solid fa-arrow-trend-up"></i> 12% this
+                                month</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-card admin-stat-card">
+                            <div class="dashboard-icon bg-success"><i class="fa-solid fa-couch"></i></div>
+                            <h2>423</h2>
+                            <p>Active Rentals</p>
+                            <span class="admin-trend text-success"><i class="fa-solid fa-check"></i> 38 renewed</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-card admin-stat-card">
+                            <div class="dashboard-icon bg-warning"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                            <h2>INR 4.5L</h2>
+                            <p>Monthly Revenue</p>
+                            <span class="admin-trend text-success"><i class="fa-solid fa-arrow-trend-up"></i> 8%
+                                growth</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="dashboard-card admin-stat-card">
+                            <div class="dashboard-icon bg-danger"><i class="fa-solid fa-clock"></i></div>
+                            <h2>12</h2>
+                            <p>Pending Requests</p>
+                            <span class="admin-trend text-danger"><i class="fa-solid fa-circle-exclamation"></i> 4
+                                urgent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-8">
+                        <div class="dashboard-panel admin-panel" id="rentals">
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <h4>Rental Performance</h4>
+                                    <small>Current month overview</small>
+                                </div>
+                                <div class="btn-group admin-filter" role="group" aria-label="Performance range">
+                                    <button class="btn btn-sm btn-primary active" type="button">Month</button>
+                                    <button class="btn btn-sm btn-outline-primary" type="button">Quarter</button>
+                                    <button class="btn btn-sm btn-outline-primary" type="button">Year</button>
+                                </div>
+                            </div>
+                            <div class="admin-chart" aria-label="Rental performance chart">
+                                <div class="admin-bar" style="--value: 52%"><span>Living</span>
+                                    <div class="admin-bar-track"></div><strong>52%</strong>
+                                </div>
+                                <div class="admin-bar" style="--value: 68%"><span>Bedroom</span>
+                                    <div class="admin-bar-track"></div><strong>68%</strong>
+                                </div>
+                                <div class="admin-bar" style="--value: 44%"><span>Study</span>
+                                    <div class="admin-bar-track"></div><strong>44%</strong>
+                                </div>
+                                <div class="admin-bar" style="--value: 78%"><span>Dining</span>
+                                    <div class="admin-bar-track"></div><strong>78%</strong>
+                                </div>
+                                <div class="admin-bar" style="--value: 61%"><span>Storage</span>
+                                    <div class="admin-bar-track"></div><strong>61%</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="dashboard-panel admin-panel h-100" id="requests">
+                            <div class="admin-panel-heading">
+                                <h4>Priority Queue</h4>
+                                <span class="badge bg-warning text-dark">12 open</span>
+                            </div>
+                            <div class="admin-task-list">
+                                <div class="admin-task"><i class="fa-solid fa-truck-fast text-primary"></i>
+                                    <div><strong>3 deliveries today</strong><small>Whitefield and Indiranagar</small>
+                                    </div>
+                                </div>
+                                <div class="admin-task"><i class="fa-solid fa-screwdriver-wrench text-warning"></i>
+                                    <div><strong>5 service visits</strong><small>Assembly and repair requests</small>
+                                    </div>
+                                </div>
+                                <div class="admin-task"><i class="fa-solid fa-receipt text-success"></i>
+                                    <div><strong>8 invoices pending</strong><small>Awaiting payment confirmation</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-xl-8">
+                        <div class="dashboard-panel admin-panel" id="customers">
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <h4>Latest Rentals</h4>
+                                    <small>Recent customer activity</small>
+                                </div>
+                                <a class="btn btn-sm btn-outline-primary" href="#">View All</a>
+                            </div>
+                            <div class="table-responsive admin-table-wrap">
+                                <table class="table align-middle admin-table" id="adminRentalTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer</th>
+                                            <th>Furniture</th>
+                                            <th>Plan</th>
+                                            <th>Status</th>
+                                            <th>Rent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>John Doe</strong><small>john@example.com</small></td>
+                                            <td>Luxury Sofa Set</td>
+                                            <td>Standard</td>
+                                            <td><span class="badge bg-success">Active</span></td>
+                                            <td>INR 2,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Sarah Khan</strong><small>sarah@example.com</small></td>
+                                            <td>Dining Table</td>
+                                            <td>Starter</td>
+                                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                            <td>INR 1,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Amit Patel</strong><small>amit@example.com</small></td>
+                                            <td>Queen Size Bed</td>
+                                            <td>Long-Term</td>
+                                            <td><span class="badge bg-info">Renewed</span></td>
+                                            <td>INR 2,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Neha Rao</strong><small>neha@example.com</small></td>
+                                            <td>Office Chair</td>
+                                            <td>Standard</td>
+                                            <td><span class="badge bg-danger">Return Due</span></td>
+                                            <td>INR 950</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="dashboard-panel admin-panel mb-4" id="payments">
+                            <div class="admin-panel-heading">
+                                <h4>Payments</h4>
+                                <i class="fa-solid fa-credit-card text-primary"></i>
+                            </div>
+                            <div class="admin-payment-row"><span>Collected</span><strong>INR 4.5L</strong></div>
+                            <div class="admin-payment-row"><span>Pending</span><strong>INR 72K</strong></div>
+                            <div class="admin-payment-row"><span>Refunds</span><strong>INR 18K</strong></div>
+                        </div>
+                        <div class="dashboard-panel admin-panel" id="inventory">
+                            <div class="admin-panel-heading">
+                                <h4>Inventory</h4>
+                                <span class="badge bg-primary">842 items</span>
+                            </div>
+                            <div class="admin-inventory-meter">
+                                <div><span style="--stock: 78%"></span></div>
+                                <small>78% currently rented</small>
+                            </div>
+                            <div class="admin-payment-row"><span>Available</span><strong>185</strong></div>
+                            <div class="admin-payment-row"><span>In service</span><strong>34</strong></div>
+                            <div class="admin-payment-row"><span>Low stock</span><strong>9</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+        <div class="container pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
+                        Furni<span class="text-primary">Rent</span></h3>
+                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals
+                        and
+                        families aiming for a beautiful home.</p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="404.html" aria-label="Facebook"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="Instagram"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Twitter"
+                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
+                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
+                        <li><a href="#" class="text-decoration-none text-white-50">Living Room</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Bedroom</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Study</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Storage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
+                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
+                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white border-opacity-25 mb-4">
+            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
+                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        FurniAuth.requireAuth("admin", "admin-login.html");
+
+        document.getElementById("adminLogoutBtn")?.addEventListener("click", (e) => {
+            e.preventDefault();
+            FurniAuth.logout();
+            window.location.href = "admin-login.html";
+        });
+    </script>
+</body>
+
+</html>
