@@ -3247,3 +3247,17 @@ body.dark-mode table td {
 .dashboard-panel strong {
     color: #ffffff !important;
 }
+
+/* The Admin Dashboard's "Priority Queue" list nests light-colored
+   .admin-task cards (#f8fafc background) inside a .dashboard-panel,
+   which is always dark itself. The unconditional white-text rule
+   above was meant for the dark panel body copy, but it also caught
+   these nested light cards, turning "3 deliveries today" etc. white
+   on a light background. Give the nested card's <strong> priority. */
+body:not(.dark-mode) .dashboard-panel .admin-task strong {
+    color: #1E293B !important;
+}
+
+.dark-mode .dashboard-panel .admin-task strong {
+    color: #F8FAFC !important;
+}
