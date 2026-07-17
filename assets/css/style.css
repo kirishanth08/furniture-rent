@@ -2739,6 +2739,22 @@ body.dark-mode {
     color: #93C5FD;
 }
 
+/* Anchor tags styled as buttons (e.g. the "Read More" links on blog
+   cards use .btn-outline-primary) were inheriting the generic link
+   color above instead of proper button coloring, leaving a faint
+   border/text combo that's hard to see against dark card backgrounds. */
+.dark-mode a.btn-outline-primary {
+    color: #93C5FD !important;
+    border-color: #93C5FD !important;
+    background-color: transparent !important;
+}
+
+.dark-mode a.btn-outline-primary:hover {
+    color: #1E293B !important;
+    background-color: #93C5FD !important;
+    border-color: #93C5FD !important;
+}
+
 /* Bootstrap alerts (login/register errors, checkout & request success
    messages, etc.) keep their light Bootstrap background in dark mode,
    but the generic ".dark-mode div" rule above was still forcing their
