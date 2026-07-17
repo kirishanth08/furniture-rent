@@ -1084,6 +1084,21 @@ BLOG
 
 }
 
+/* Blog cards reuse the .pricing-plan class (built for the pricing page),
+   which forces height:100%. Combined with .blog-card's overflow:hidden
+   and the row's flex stretch-alignment, a fixed 100% height clips any
+   content taller than that stretched minimum instead of growing to fit
+   it — silently cutting off the "Read More" button with no visible
+   trace. Swap to min-height so the card can still grow to fit its
+   content while keeping same-row cards visually aligned. */
+.pricing-plan.blog-card {
+
+    height: auto;
+
+    min-height: 100%;
+
+}
+
 [data-blog-slug] .blog-card,
 .blog-card[data-blog-slug] {
 
