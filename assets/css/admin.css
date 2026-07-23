@@ -400,14 +400,6 @@ body.admin-sidebar-open .admin-sidebar-overlay {
     color: #1E293B;
 }
 
-/* Same issue on the "Priority Queue" cards (Dashboard) — "3 deliveries
-   today" / "5 service visits" etc. were inheriting a light/white color
-   with nothing to override it in light mode, so the text nearly
-   vanished against the light card background. */
-.admin-task strong {
-    color: #1E293B;
-}
-
 .admin-table tbody tr:nth-child(even) td {
     background: #f4f8fc;
 }

@@ -44,32 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    /*====================================================
-    NEWSLETTER SUBSCRIBE FORMS
-    These used to submit (action="404.html") to a dead
-    page. There's no real newsletter backend in this demo,
-    so just confirm the "subscription" and reset the field
-    instead of navigating anywhere.
-    ====================================================*/
+    // Auth buttons, theme toggle, and RTL toggle all live inside the
+    // header markup that navbar.js injects into #navbar. That injection
+    // happens on DOMContentLoaded too, so instead of assuming the
+    // elements already exist here, wait for navbar.js to say they do.
+    document.addEventListener("navbar:ready", initNavbarFeatures);
 
-    document.querySelectorAll(".newsletter-form").forEach((form) => {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const emailInput = form.querySelector('input[type="email"]');
-            const email = emailInput ? emailInput.value.trim() : "";
-
-            showDemoNotice(email
-                ? `Thanks for subscribing! We'll send updates to ${email}.`
-                : "Thanks for subscribing!");
-
-            form.reset();
-        });
-    });
+    function initNavbarFeatures() {
 
     /*====================================================
     NAVBAR AUTH STATE
-    Swaps the Login / Get Started buttons for the logged-in
+    Swaps the Login / Sign Up buttons for the logged-in
     customer's name + avatar dropdown whenever a session
     exists (see assets/js/storage.js -> FurniAuth).
     ====================================================*/
@@ -92,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             authButtons.innerHTML = `
                 <div class="dropdown">
-                    <button class="btn btn-outline-primary fw-semibold dropdown-toggle d-flex align-items-center gap-2"
+                    <button class="btn btn-outline-primary fw-semibold dropdown-toggle d-flex align-items-center gap-2 nav-cta-btn"
                         type="button" id="navUserMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-bold"
                             style="width:26px;height:26px;font-size:.8rem;">${initial}</span>
@@ -124,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             authButtons.innerHTML = `
                 <div class="dropdown">
-                    <button class="btn btn-outline-primary fw-semibold dropdown-toggle d-flex align-items-center gap-2"
+                    <button class="btn btn-outline-primary fw-semibold dropdown-toggle d-flex align-items-center gap-2 nav-cta-btn"
                         type="button" id="navAdminMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center fw-bold"
                             style="width:26px;height:26px;font-size:.8rem;">${initial}</span>
@@ -234,8 +219,17 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("dir", dir);
 
         if (rtlBtn) {
-            rtlBtn.title = dir === "rtl" ? "Switch to LTR" : "Switch to RTL";
+
+            const nextDir = dir === "rtl" ? "LTR" : "RTL";
+
+            rtlBtn.title = `Switch to ${nextDir}`;
+            rtlBtn.setAttribute("aria-label", `Switch to ${nextDir} layout`);
             rtlBtn.classList.toggle("active-rtl", dir === "rtl");
+
+            const label = rtlBtn.querySelector(".rtl-btn-label");
+
+            if (label) label.textContent = nextDir;
+
         }
 
     }
@@ -252,6 +246,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+    } // end initNavbarFeatures
 
     /*====================================================
     CATALOG FILTER

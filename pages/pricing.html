@@ -3,6 +3,8 @@
 
 <head>
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -49,142 +51,69 @@
 <body class="">
 
 
-    <header class="sticky-top bg-white shadow-sm py-2">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
-                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainMenu">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link active fw-semibold" href="catalog.html">Catalog</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="d-flex align-items-center gap-2">
-                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
-                            aria-label="Toggle Dark Mode">
-                            <i class="fa-solid fa-moon text-dark"></i>
-                        </button>
-                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
-                            aria-label="Switch to RTL layout">
-                            <i class="fa-solid fa-language text-dark"></i>
-                        </button>
-                        <span id="authButtons" class="d-flex align-items-center gap-2">
-                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
-                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="navbar"></div>
     <!-- ==========================================
 PRICING HERO
 ========================================== -->
 
     <section class="pricing-hero section-padding">
-
         <div class="container">
+            <div class="row align-items-center g-5">
 
-            <div class="row justify-content-center">
+                <!-- LEFT IMAGE -->
+                <div class="col-lg-6">
 
-                <div class="col-xl-8 col-lg-10 text-center">
+                    <div class="pricing-hero-image">
+
+                        <img src="../assets/images/pricing-hero.webp" alt="Premium Furniture">
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT CONTENT -->
+
+                <div class="col-lg-6">
 
                     <span class="section-subtitle">
                         Flexible Rental Plans
                     </span>
 
                     <h1 class="hero-title mt-3">
-                        Choose A Rental Plan That
-                        Fits Your Lifestyle
+                        Furniture That Fits
+                        Your Budget
                     </h1>
 
                     <p class="hero-description">
 
-                        Whether you're moving into a new apartment,
-                        furnishing a student room, or setting up a
-                        long-term home, our flexible rental plans
-                        give you complete freedom without the cost
-                        of buying furniture.
+                        Rent premium furniture with flexible monthly
+                        plans, free delivery, and hassle-free upgrades.
+                        Perfect for students, professionals and families.
 
                     </p>
 
-                </div>
+                    <ul class="pricing-highlights">
 
-            </div>
+                        <li><i class="fa-solid fa-circle-check"></i> Free Delivery & Installation</li>
 
-            <div class="row g-4 justify-content-center mt-5">
+                        <li><i class="fa-solid fa-circle-check"></i> No Long-Term Commitment</li>
 
-                <div class="col-lg-4 col-md-6">
+                        <li><i class="fa-solid fa-circle-check"></i> Easy Furniture Exchange</li>
 
-                    <div class="hero-feature-card">
+                    </ul>
 
-                        <div class="hero-feature-icon">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
+                    <a href="#pricing-plans" class="btn btn-warning btn-lg mt-4">
 
-                        <h5>Free Delivery</h5>
+                        View Pricing Plans
 
-                        <p>
-                            Delivery & professional setup included
-                            on every rental order.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="hero-feature-card">
-
-                        <div class="hero-feature-icon">
-                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                        </div>
-
-                        <h5>Easy Furniture Swap</h5>
-
-                        <p>
-                            Upgrade or exchange your furniture
-                            whenever your needs change.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="hero-feature-card">
-
-                        <div class="hero-feature-icon">
-                            <i class="fa-solid fa-shield-heart"></i>
-                        </div>
-
-                        <h5>Damage Protection</h5>
-
-                        <p>
-                            Optional protection plans for complete
-                            peace of mind.
-                        </p>
-
-                    </div>
+                    </a>
 
                 </div>
 
             </div>
-
         </div>
-
     </section>
+
 
     <!-- ==========================================
 FEATURE COMPARISON
@@ -774,7 +703,7 @@ CTA
 PRICING PLANS
 ========================================== -->
 
-    <section class="pricing-preview section-padding">
+    <section id="pricing-plans" class="pricing-preview section-padding">
         <div class="container">
             <div class="section-heading text-center mb-5">
                 <span class="section-subtitle d-block mb-2">Rental Plans</span>
@@ -834,73 +763,16 @@ PRICING PLANS
         </div>
     </section>
 
-    <footer class="footer bg-dark text-white pt-5 pb-3">
-        <div class="container pt-4">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
-                        Furni<span class="text-primary">Rent</span></h3>
-                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students, professionals and
-                        families aiming for a beautiful home.</p>
-                    <div class="footer-social d-flex gap-3">
-                        <a href="#" aria-label="Facebook"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-3">Company</h5>
-                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
-                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
-                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a></li>
-                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a></li>
-                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3">Categories</h5>
-                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
-                        <li><a href="catalog.html?room=living-room" class="text-decoration-none text-white-50">Living Room</a></li>
-                        <li><a href="catalog.html?room=bedroom" class="text-decoration-none text-white-50">Bedroom</a></li>
-                        <li><a href="catalog.html?room=study" class="text-decoration-none text-white-50">Study</a></li>
-                        <li><a href="catalog.html?room=dining" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
-                        <li><a href="catalog.html?category=storage" class="text-decoration-none text-white-50">Storage</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3">Contact</h5>
-                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
-                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
-                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
-                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="border-white border-opacity-25 mb-4">
-            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
-                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
-                <div>
-                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
-                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
         aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
         <i class="fa-solid fa-arrow-up text-white"></i>
     </button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
+
 </body>
 
 </html>

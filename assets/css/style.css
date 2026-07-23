@@ -24,11 +24,17 @@
 GLOBAL BODY
 ===============================*/
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background: var(--color-bg);
     color: var(--color-text);
     font-family: 'DM Sans', sans-serif;
     transition: all .35s ease;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 h1,
@@ -51,6 +57,115 @@ footer h6 {
 
 section {
     transition: all .35s ease;
+}
+
+/*==============================
+NAVBAR
+===============================*/
+
+.brand-mark {
+    flex-shrink: 0;
+}
+
+/* Active page link: a bottom accent bar + brand-color text so the
+   current section is obvious at a glance, matching the warm accent
+   used on the "Rent" half of the logo. The Home item is a dropdown
+   toggle — it keeps its own caret and stays the same neutral color
+   as its siblings rather than taking the active treatment, so the
+   caret is never covered up by the accent bar. */
+.navbar .navbar-nav .nav-link {
+    position: relative;
+    color: var(--color-text);
+}
+
+.navbar .navbar-nav .nav-link.active:not(.dropdown-toggle),
+.navbar .navbar-nav .nav-link.show:not(.dropdown-toggle) {
+    color: var(--color-primary);
+}
+
+/* Sticky Navbar */
+/* Fixed Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    background: #fff;
+    transition: all .3s ease;
+}
+
+body {
+    padding-top: 90px;
+}
+
+/* Navbar Links */
+.navbar .navbar-nav .nav-link {
+    color: var(--color-text);
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--color-primary);
+    background: rgba(63, 81, 181, 0.08);
+}
+
+/* Active */
+.navbar .navbar-nav .nav-link.active {
+    color: var(--color-primary);
+    background: rgba(63, 81, 181, 0.12);
+    font-weight: 600;
+}
+
+.navbar .dropdown-item.active {
+    color: var(--color-primary) !important;
+    background-color: rgba(63, 81, 181, 0.08) !important;
+    font-weight: 600;
+}
+
+/* Header action buttons: icon toggles (theme/RTL) share one fixed
+   circular size, and the auth CTAs (Login/Sign Up/account menu) share
+   one pill shape, padding and weight, so the whole cluster reads as a
+   single consistent group instead of mismatched buttons. */
+.nav-icon-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Fill animation on hover: the circle fills with the brand color and
+   the icon/label switches to white, instead of an abrupt color swap. */
+.nav-icon-btn:hover,
+.nav-icon-btn:focus-visible {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.nav-icon-btn:hover i,
+.nav-icon-btn:focus-visible i,
+.nav-icon-btn:hover .rtl-btn-label,
+.nav-icon-btn:focus-visible .rtl-btn-label {
+    color: #fff !important;
+}
+
+.rtl-btn-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+}
+
+.nav-cta-btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
 }
 
 /* Base card requirement: white with blue left border */
@@ -421,15 +536,163 @@ section {
     color: var(--color-primary);
 }
 
-/*==================================================
-PRICING HERO
-==================================================*/
+/*=========================================
+NEW PRICING HERO
+=========================================*/
 
 .pricing-hero {
 
-    background: linear-gradient(180deg,
-            #ffffff 0%,
-            #f8f9fc 100%);
+    padding: 90px 0;
+
+    background: #F8FAFC;
+
+}
+
+.pricing-hero-image {
+
+    position: relative;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+
+}
+
+.pricing-hero-image img {
+
+    width: 100%;
+
+    height: 620px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+.pricing-floating-card {
+
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #fff;
+
+    padding: 22px 28px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
+
+}
+
+.pricing-floating-card span {
+
+    display: block;
+
+    color: #64748B;
+
+    font-size: 14px;
+
+}
+
+.pricing-floating-card h3 {
+
+    margin: 8px 0;
+
+    color: var(--color-primary);
+
+    font-weight: 700;
+
+}
+
+.pricing-floating-card h3 span {
+
+    font-size: 16px;
+
+}
+
+.pricing-highlights {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 35px 0;
+
+}
+
+.pricing-highlights li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
+
+.pricing-highlights i {
+
+    color: #16A34A;
+
+    font-size: 20px;
+
+}
+
+.dark-mode .pricing-hero {
+
+    background: #0F172A;
+
+}
+
+/* Pricing Hero Button */
+.pricing-hero .btn-warning {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: all .3s ease;
+}
+
+.pricing-hero .btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 193, 7, .35);
+}
+
+.dark-mode .pricing-floating-card {
+
+    background: #1E293B;
+
+}
+
+.dark-mode .pricing-floating-card span {
+
+    color: #CBD5E1;
+
+}
+
+.dark-mode .pricing-highlights li {
+
+    color: #F8FAFC;
+
+}
+
+.dark-mode .pricing-highlights i {
+
+    color: #4ADE80;
 
 }
 
@@ -1084,21 +1347,6 @@ BLOG
 
 }
 
-/* Blog cards reuse the .pricing-plan class (built for the pricing page),
-   which forces height:100%. Combined with .blog-card's overflow:hidden
-   and the row's flex stretch-alignment, a fixed 100% height clips any
-   content taller than that stretched minimum instead of growing to fit
-   it — silently cutting off the "Read More" button with no visible
-   trace. Swap to min-height so the card can still grow to fit its
-   content while keeping same-row cards visually aligned. */
-.pricing-plan.blog-card {
-
-    height: auto;
-
-    min-height: 100%;
-
-}
-
 [data-blog-slug] .blog-card,
 .blog-card[data-blog-slug] {
 
@@ -1649,6 +1897,124 @@ LOGIN PART 2
     color: var(--color-primary);
 
     margin-right: 8px;
+
+}
+
+/*==================================================
+SOCIAL LOGIN
+==================================================*/
+
+.divider-text {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 22px 0;
+
+}
+
+.divider-text::before,
+.divider-text::after {
+
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #e2e2e2;
+
+}
+
+.divider-text span {
+
+    padding: 0 14px;
+
+}
+
+.social-login-buttons {
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.btn-social {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    transition: .25s;
+
+}
+
+.btn-social:hover {
+
+    background: #f8f9fa;
+    transform: translateY(-3px);
+    border-color: #d5d5d5;
+
+}
+
+.btn-social i,
+.btn-social svg {
+
+    font-size: 18px;
+    flex-shrink: 0;
+
+}
+
+.btn-social.btn-google i {
+
+    color: #EA4335;
+
+}
+
+.btn-social.btn-apple i {
+
+    color: #000;
+
+}
+
+.dark-mode .divider-text {
+
+    color: #aaa;
+
+}
+
+.dark-mode .divider-text::before,
+.dark-mode .divider-text::after {
+
+    border-color: #444;
+
+}
+
+.dark-mode .btn-social {
+
+    background: #2a2a2a;
+    border-color: #444;
+    color: #f1f1f1;
+
+}
+
+.dark-mode .btn-social:hover {
+
+    background: #333;
+
+}
+
+.dark-mode .btn-social.btn-apple i {
+
+    color: #fff;
 
 }
 
@@ -2644,13 +3010,22 @@ body.dark-mode {
     color: var(--color-text) !important;
 }
 
-.dark-mode body,
-.dark-mode section,
+.dark-mode body {
+    background: var(--color-bg) !important;
+}
+
+.dark-mode section:not(.page-header):not(.about-hero),
 .dark-mode header,
 .dark-mode footer,
 .dark-mode nav {
-    background: var(--color-bg) !important;
-    color: var(--color-text) !important;
+    background-color: var(--color-bg) !important;
+}
+
+/* Keep page banner images visible in dark mode */
+.dark-mode .page-header {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 .dark-mode .navbar {
@@ -2708,10 +3083,34 @@ body.dark-mode {
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6,
-.dark-mode .navbar-brand,
 .dark-mode .nav-link,
 .dark-mode strong {
     color: #FFFFFF !important;
+}
+
+/* Brand / logo: keep the exact same colors as light mode so the logo
+   reads identically in both themes instead of the "Furni" half turning
+   plain white while "Rent" stays gold. */
+.dark-mode .navbar-brand.text-primary {
+    color: #3F51B5 !important;
+}
+
+.dark-mode .navbar-brand .text-warning {
+    color: #FFC107 !important;
+}
+
+.dark-mode .navbar .navbar-nav .nav-link.active:not(.dropdown-toggle),
+.dark-mode .navbar .navbar-nav .nav-link.show:not(.dropdown-toggle) {
+    color: #FFC107 !important;
+}
+
+
+.dark-mode .footer-logo-link .brand-word {
+    color: #3F51B5 !important;
+}
+
+.dark-mode .footer-logo-link .text-warning {
+    color: #FFC107 !important;
 }
 
 /* Body copy */
@@ -2726,6 +3125,20 @@ body.dark-mode {
 .dark-mode td,
 .dark-mode th {
     color: #CBD5E1 !important;
+}
+
+/* Keep navbar logo identical in dark mode */
+.dark-mode .navbar-brand .brand-mark {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.dark-mode .navbar-brand .brand-word {
+    color: #3F51B5 !important;
+}
+
+.dark-mode .navbar-brand .brand-word .text-warning {
+    color: #FFC107 !important;
 }
 
 .dark-mode .text-muted,
@@ -2752,22 +3165,6 @@ body.dark-mode {
 /* Links */
 .dark-mode a {
     color: #93C5FD;
-}
-
-/* Anchor tags styled as buttons (e.g. the "Read More" links on blog
-   cards use .btn-outline-primary) were inheriting the generic link
-   color above instead of proper button coloring, leaving a faint
-   border/text combo that's hard to see against dark card backgrounds. */
-.dark-mode a.btn-outline-primary {
-    color: #93C5FD !important;
-    border-color: #93C5FD !important;
-    background-color: transparent !important;
-}
-
-.dark-mode a.btn-outline-primary:hover {
-    color: #1E293B !important;
-    background-color: #93C5FD !important;
-    border-color: #93C5FD !important;
 }
 
 /* Bootstrap alerts (login/register errors, checkout & request success
@@ -2963,7 +3360,8 @@ body.dark-mode {
     border-color: #334155;
 }
 
-.dark-mode #rtlBtn i {
+.dark-mode #rtlBtn i,
+.dark-mode #rtlBtn .rtl-btn-label {
     color: #fff !important;
 }
 
@@ -3263,16 +3661,174 @@ body.dark-mode table td {
     color: #ffffff !important;
 }
 
-/* The Admin Dashboard's "Priority Queue" list nests light-colored
-   .admin-task cards (#f8fafc background) inside a .dashboard-panel,
-   which is always dark itself. The unconditional white-text rule
-   above was meant for the dark panel body copy, but it also caught
-   these nested light cards, turning "3 deliveries today" etc. white
-   on a light background. Give the nested card's <strong> priority. */
-body:not(.dark-mode) .dashboard-panel .admin-task strong {
-    color: #1E293B !important;
+@media (max-width: 991px) {
+
+    /* Center the entire action section */
+    #mainMenu>.d-flex {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    /* Keep Login & Sign Up together */
+    #authButtons {
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
-.dark-mode .dashboard-panel .admin-task strong {
-    color: #F8FAFC !important;
+@media (max-width: 991px) {
+
+    #mainMenu .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    #mainMenu .nav-link {
+        display: inline-block;
+    }
+
+}
+
+/*=========================================
+FOOTER SOCIAL ICONS
+=========================================*/
+
+.footer-social {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social a {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all .35s ease;
+}
+
+.footer-social a i {
+    font-size: 24px;
+    transition: all .35s ease;
+}
+
+/* Hover Effect */
+.footer-social a:hover {
+    background: var(--color-primary);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(63, 81, 181, .35);
+}
+
+.footer-social a:hover i {
+    color: #ffffff;
+    transform: scale(1.15);
+}
+
+/* Dark Mode - Breadcrumb */
+.dark-mode .breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, .65) !important;
+}
+
+.page-header nav[aria-label="breadcrumb"] {
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+    background: none !important;
+    padding: 0;
+    border-radius: 0;
+}
+
+.page-header .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background: none !important;
+}
+
+.dark-mode .page-header .breadcrumb-item,
+.dark-mode .page-header .breadcrumb-item a {
+    color: rgba(255, 255, 255, .85);
+}
+
+.dark-mode .page-header .breadcrumb-item.active {
+    color: #ffffff;
+}
+
+.dark-mode .page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: rgba(255, 255, 255, .6);
+}
+
+/* =========================================
+   FIX BUTTON TEXT IN DARK MODE
+========================================= */
+
+.dark-mode .btn-warning,
+.dark-mode .btn-warning:link,
+.dark-mode .btn-warning:visited {
+    color: #1F2937 !important;
+}
+
+.dark-mode .btn-warning:hover {
+    color: #1F2937 !important;
+}
+
+.dark-mode .btn-warning i {
+    color: #1F2937 !important;
+}
+
+/* ===========================
+   CONTACT PAGE DARK/LIGHT HERO
+=========================== */
+
+.contact-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, .82);
+    z-index: 1;
+}
+
+.dark-mode .contact-header::before {
+    background: rgba(15, 23, 42, .72);
+}
+
+.contact-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-header .hero-title {
+    color: #222;
+}
+
+.contact-header .hero-description {
+    color: #555;
+}
+
+.dark-mode .contact-header .hero-title {
+    color: #fff !important;
+}
+
+.dark-mode .contact-header .hero-description {
+    color: #E2E8F0 !important;
+}
+
+.dark-mode .contact-header .section-subtitle {
+    color: #FFC107 !important;
+}
+
+.dark-mode .contact-header .breadcrumb-item,
+.dark-mode .contact-header .breadcrumb-item a {
+    color: #CBD5E1 !important;
 }

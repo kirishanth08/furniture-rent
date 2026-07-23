@@ -3,6 +3,8 @@
 
 <head>
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -41,62 +43,27 @@
 
 <body class="">
 
-    <header class="sticky-top bg-white shadow-sm py-2">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html"
-                    style="font-family: 'Merriweather', serif;">Furni<span class="text-warning">Rent</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainMenu">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link active fw-semibold" href="catalog.html">Catalog</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="d-flex align-items-center gap-2">
-                        <button class="btn btn-light rounded-circle border" id="themeBtn" title="Toggle Dark Mode"
-                            aria-label="Toggle Dark Mode">
-                            <i class="fa-solid fa-moon text-dark"></i>
-                        </button>
-                        <button class="btn btn-light rounded-circle border" id="rtlBtn" title="Switch to RTL"
-                            aria-label="Switch to RTL layout">
-                            <i class="fa-solid fa-language text-dark"></i>
-                        </button>
-                        <span id="authButtons" class="d-flex align-items-center gap-2">
-                            <a href="login.html" class="btn btn-outline-primary fw-semibold">Login</a>
-                            <a href="register.html" class="btn btn-warning fw-semibold text-dark">Get Started</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="navbar"></div>
     <!--=========================================
 BLOG HERO
 ==========================================-->
 
-    <section class="pricing-hero section-padding">
+    <section class="pricing-hero section-padding text-white position-relative"
+        style="background-image: linear-gradient(100deg, rgba(60,42,20,.85), rgba(63,81,181,.55)), url('../assets/images/categories/study.webp'); background-size: cover; background-position: center;">
 
         <div class="container">
 
-            <div class="row justify-content-center">
+            <div class="row">
 
-                <div class="col-lg-8 text-center">
+                <div class="col-lg-8">
 
-                    <span class="section-subtitle">
+                    <span class="section-subtitle text-warning">
 
                         Our Blog
 
                     </span>
 
-                    <h1 class="hero-title mt-3">
+                    <h1 class="hero-title mt-3 text-white">
 
                         Furniture Tips,
                         Rental Guides &
@@ -104,7 +71,7 @@ BLOG HERO
 
                     </h1>
 
-                    <p class="hero-description">
+                    <p class="hero-description text-white-50">
 
                         Discover expert advice on furniture,
                         interior styling, rental tips and
@@ -128,7 +95,8 @@ FEATURED BLOG
 
         <div class="container">
 
-            <div class="pricing-plan blog-card" data-blog-slug="interior-design-ideas-modern-apartments" data-blog-search="featured interior design ideas modern apartments">
+            <div class="pricing-plan blog-card" data-blog-slug="interior-design-ideas-modern-apartments"
+                data-blog-search="featured interior design ideas modern apartments">
 
                 <div class="row align-items-center g-5">
 
@@ -164,7 +132,8 @@ FEATURED BLOG
 
                         <div class="mt-4">
 
-                            <a href="blog-details.html?slug=interior-design-ideas-modern-apartments" class="btn btn-primary">
+                            <a href="blog-details.html?slug=interior-design-ideas-modern-apartments"
+                                class="btn btn-primary">
 
                                 Read Article
 
@@ -199,7 +168,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 1 -->
 
-                        <div class="col-md-6" data-blog-slug="choosing-perfect-sofa" data-blog-search="interior choosing the perfect sofa">
+                        <div class="col-md-6" data-blog-slug="choosing-perfect-sofa"
+                            data-blog-search="interior choosing the perfect sofa">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -220,7 +190,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=choosing-perfect-sofa" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=choosing-perfect-sofa"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -236,7 +207,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 2 -->
 
-                        <div class="col-md-6" data-blog-slug="why-renting-saves-money" data-blog-search="rental tips why renting saves money">
+                        <div class="col-md-6" data-blog-slug="why-renting-saves-money"
+                            data-blog-search="rental tips why renting saves money">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -266,7 +238,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=why-renting-saves-money" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=why-renting-saves-money"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -282,7 +255,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 3 -->
 
-                        <div class="col-md-6" data-blog-slug="luxury-bedroom-ideas" data-blog-search="design luxury bedroom ideas">
+                        <div class="col-md-6" data-blog-slug="luxury-bedroom-ideas"
+                            data-blog-search="design luxury bedroom ideas">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -313,7 +287,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=luxury-bedroom-ideas" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=luxury-bedroom-ideas"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -329,7 +304,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 4 -->
 
-                        <div class="col-md-6" data-blog-slug="dining-room-inspiration" data-blog-search="guide dining room inspiration">
+                        <div class="col-md-6" data-blog-slug="dining-room-inspiration"
+                            data-blog-search="guide dining room inspiration">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -360,7 +336,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=dining-room-inspiration" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=dining-room-inspiration"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -376,7 +353,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 5 -->
 
-                        <div class="col-md-6" data-blog-slug="workspace-setup-tips" data-blog-search="decor workspace setup tips">
+                        <div class="col-md-6" data-blog-slug="workspace-setup-tips"
+                            data-blog-search="decor workspace setup tips">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -407,7 +385,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=workspace-setup-tips" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=workspace-setup-tips"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -423,7 +402,8 @@ LATEST ARTICLES + SIDEBAR
 
                         <!-- BLOG 6 -->
 
-                        <div class="col-md-6" data-blog-slug="minimal-living-spaces" data-blog-search="lifestyle minimal living spaces">
+                        <div class="col-md-6" data-blog-slug="minimal-living-spaces"
+                            data-blog-search="lifestyle minimal living spaces">
 
                             <div class="pricing-plan blog-card p-0 h-100">
 
@@ -454,7 +434,8 @@ LATEST ARTICLES + SIDEBAR
 
                                     <div class="mt-auto">
 
-                                        <a href="blog-details.html?slug=minimal-living-spaces" class="btn btn-outline-primary">
+                                        <a href="blog-details.html?slug=minimal-living-spaces"
+                                            class="btn btn-outline-primary">
 
                                             Read More
 
@@ -493,7 +474,8 @@ LATEST ARTICLES + SIDEBAR
 
                             <div class="input-group">
 
-                                <input type="text" class="form-control" id="blogSearchInput" placeholder="Search articles...">
+                                <input type="text" class="form-control" id="blogSearchInput"
+                                    placeholder="Search articles...">
 
                                 <button class="btn btn-primary" id="blogSearchBtn" type="button">
 
@@ -691,11 +673,12 @@ NEWSLETTER
 
                     <div class="col-lg-5">
 
-                        <form class="row g-2 newsletter-form" action="#" method="GET">
+                        <form class="row g-2" action="404.html" method="GET">
 
                             <div class="col-8">
 
-                                <input type="email" name="EMAIL" class="form-control form-control-lg" placeholder="Enter email">
+                                <input type="email" name="EMAIL" class="form-control form-control-lg"
+                                    placeholder="Enter email">
 
                             </div>
 
@@ -755,69 +738,7 @@ BLOG CTA
         </div>
 
     </section>
-    <footer class="footer bg-dark text-white pt-5 pb-3">
-        <div class="container pt-4">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <h3 class="footer-logo text-white fw-bolder mb-3" style="font-family: 'Merriweather', serif;">
-                        Furni<span class="text-primary">Rent</span></h3>
-                    <p class="text-white-50 mb-4">Premium furniture rental solutions for students,
-                        professionals and families aiming for a beautiful home.</p>
-                    <div class="footer-social d-flex gap-3">
-                        <a href="#" aria-label="Facebook"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"
-                            class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition demo-action"
-                            style="width: 40px; height: 40px;"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-3">Company</h5>
-                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
-                        <li><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
-                        <li><a href="catalog.html" class="text-decoration-none text-white-50">Catalog</a>
-                        </li>
-                        <li><a href="pricing.html" class="text-decoration-none text-white-50">Pricing</a>
-                        </li>
-                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3">Categories</h5>
-                    <ul class="footer-links list-unstyled text-white-50 lh-lg">
-                        <li><a href="catalog.html?room=living-room" class="text-decoration-none text-white-50">Living Room</a></li>
-                        <li><a href="catalog.html?room=bedroom" class="text-decoration-none text-white-50">Bedroom</a></li>
-                        <li><a href="catalog.html?room=study" class="text-decoration-none text-white-50">Study</a></li>
-                        <li><a href="catalog.html?room=dining" class="text-decoration-none text-white-50">Kitchen & Dining</a></li>
-                        <li><a href="catalog.html?category=storage" class="text-decoration-none text-white-50">Storage</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3">Contact</h5>
-                    <ul class="footer-contact list-unstyled text-white-50 lh-lg">
-                        <li><i class="fa-solid fa-location-dot me-2"></i> Bangalore, India</li>
-                        <li><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</li>
-                        <li><i class="fa-solid fa-envelope me-2"></i> support@furnirent.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="border-white border-opacity-25 mb-4">
-            <div class="footer-bottom d-flex flex-wrap justify-content-between text-white-50 text-sm">
-                <p class="mb-2 mb-md-0">© 2026 FurniRent. All Rights Reserved.</p>
-                <div>
-                    <a href="#" class="text-decoration-none text-white-50 me-2">Privacy Policy</a> |
-                    <a href="#" class="text-decoration-none text-white-50 ms-2">Terms & Conditions</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
         aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
@@ -896,6 +817,9 @@ BLOG CTA
 
         })();
     </script>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
 
 </body>
 

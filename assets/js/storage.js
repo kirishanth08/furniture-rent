@@ -117,6 +117,41 @@ const FurniAuth = (() => {
         return { success: true, user: newUser };
     }
 
+    // Demo-only "social" auth. There's no real OAuth backend here, so this
+    // simulates what Google/Apple sign-in would do: find-or-create a user
+    // tied to that provider and start a session for them.
+    // provider: "google" | "apple", role: "customer" | "admin"
+    function socialLogin(provider, role) {
+        const providerNames = { google: "Google", apple: "Apple" };
+        const providerLabel = providerNames[provider] || provider;
+        const email = `${provider}.user@${provider}.demo`;
+
+        const users = getUsers();
+        let match = users.find(u => u.email.toLowerCase() === email && u.role === role);
+
+        if (!match) {
+            match = {
+                role,
+                name: `${providerLabel} User`,
+                email,
+                password: null,
+                provider
+            };
+            users.push(match);
+            saveUsers(users);
+        }
+
+        localStorage.setItem(SESSION_KEY, JSON.stringify({
+            email: match.email,
+            name: match.name,
+            role: match.role,
+            provider,
+            loggedInAt: Date.now()
+        }));
+
+        return { success: true, user: match };
+    }
+
     function logout() {
         localStorage.removeItem(SESSION_KEY);
     }
@@ -139,6 +174,6 @@ const FurniAuth = (() => {
 
     seedUsers();
 
-    return { login, signup, logout, getSession, requireAuth };
+    return { login, signup, socialLogin, logout, getSession, requireAuth };
 
 })();
