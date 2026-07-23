@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("navbar").innerHTML = `
     
-    <header class="sticky-top bg-white shadow-sm py-2">
-        <nav class="navbar navbar-expand-lg">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
             <div class="container">
     
                 <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3 text-primary"

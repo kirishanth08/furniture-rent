@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <footer class="footer bg-dark text-white pt-5 pb-3">
     <div class="container pt-4">
-        <div class="row g-5 mb-5">
+        <div class="footer-cols-wrap mb-5">
 
-            <div class="col-lg-4">
+            <div class="footer-col footer-col-brand">
                 <a href="index.html"
                     class="footer-logo-link d-inline-flex align-items-center gap-2 text-decoration-none mb-3">
                     <svg width="36" height="36" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FurniRent logo">
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
 
-            <div class="col-lg-2">
+            <div class="footer-col">
 
                 <h5 class="fw-bold mb-3">
                     Company
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             </div>
 
-            <div class="col-lg-3">
+            <div class="footer-col">
 
                 <h5 class="fw-bold mb-3">
                     Categories
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             </div>
 
-            <div class="col-lg-3">
+            <div class="footer-col">
 
                 <h5 class="fw-bold mb-3">
                     Contact

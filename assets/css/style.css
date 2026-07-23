@@ -95,8 +95,14 @@ NAVBAR
     transition: all .3s ease;
 }
 
+.site-header {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
 body {
-    padding-top: 90px;
+    padding-top: 67px;
 }
 
 /* Navbar Links */
@@ -481,12 +487,19 @@ body {
 
 /* Map iframe container */
 .map-placeholder {
-    width: 81%;
+    width: 100%;
     height: 400px;
     border-radius: var(--radius);
     border: 1px solid var(--border);
     overflow: hidden;
     background: var(--border);
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
 }
 
 /*=========================================
@@ -3015,10 +3028,14 @@ body.dark-mode {
 }
 
 .dark-mode section:not(.page-header):not(.about-hero),
-.dark-mode header,
+.dark-mode header:not(.site-header),
 .dark-mode footer,
 .dark-mode nav {
     background-color: var(--color-bg) !important;
+}
+
+.dark-mode .site-header {
+    background-color: transparent !important;
 }
 
 /* Keep page banner images visible in dark mode */
@@ -3831,4 +3848,56 @@ FOOTER SOCIAL ICONS
 .dark-mode .contact-header .breadcrumb-item,
 .dark-mode .contact-header .breadcrumb-item a {
     color: #CBD5E1 !important;
+}
+
+/* Keep testimonial star ratings gold in dark mode instead of
+   inheriting the light body-text color set on the card */
+.dark-mode .testimonial-rating,
+.dark-mode .testimonial-rating i {
+    color: #FFC107 !important;
+}
+
+/* Contact page map card: the shared .pricing-plan padding (45px) is
+   too generous for an embedded map and left uneven blank space
+   around it. Tighten it so the map fills the card evenly. */
+.map-card {
+    padding: 24px;
+}
+
+.map-card iframe {
+    min-height: 380px;
+}
+
+/* Footer layout: size each column to its own content (instead of
+   forcing equal fixed widths) so short columns like "Company" don't
+   leave a large dead gap before the next one, while the outer
+   left/right padding still comes from the standard .container. */
+.footer-cols-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 32px;
+    row-gap: 40px;
+}
+
+.footer-col {
+    flex: 1 1 160px;
+    max-width: 220px;
+}
+
+.footer-col-brand {
+    flex: 1 1 280px;
+    max-width: 360px;
+}
+
+@media (max-width: 991.98px) {
+    .footer-cols-wrap {
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    .footer-col,
+    .footer-col-brand {
+        max-width: 100%;
+    }
 }
