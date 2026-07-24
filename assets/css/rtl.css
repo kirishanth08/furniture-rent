@@ -92,6 +92,26 @@ left/right CSS in style.css and admin.css.
     text-align: right;
 }
 
+/* Breadcrumbs (Home / Page): Bootstrap's .breadcrumb is a flex
+   container, so in RTL it silently reverses item order even though
+   the labels are plain English text — "Home / Catalog" becomes
+   "Catalog / Home". Force the original left-to-right item order and
+   fix the divider spacing so it still sits between, not before, the
+   items. */
+[dir="rtl"] .breadcrumb {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item {
+    padding-right: 0.5rem;
+    padding-left: 0;
+}
+
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+    padding-right: 0;
+    padding-left: 0.5rem;
+}
+
 /* Customer dashboard shell: mirror the sidebar/main split and align
    menu icons/text the same way the admin dashboard already does. */
 [dir="rtl"] .dashboard-wrapper {

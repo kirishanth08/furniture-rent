@@ -3372,6 +3372,13 @@ body.dark-mode {
     color: #fff !important;
 }
 
+/* The RTL label span (text-dark) was missed by the rule above, so the
+   button's "RTL"/"LTR" text stayed dark and disappeared against the
+   indigo active background. */
+#rtlBtn.active-rtl .rtl-btn-label {
+    color: #fff !important;
+}
+
 .dark-mode #rtlBtn {
     background: #1E293B;
     border-color: #334155;

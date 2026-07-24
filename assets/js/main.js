@@ -44,6 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    /*====================================================
+    NEWSLETTER SUBSCRIBE FORMS
+    These used to submit (action="404.html") to a dead
+    page. There's no real newsletter backend in this demo,
+    so just confirm the "subscription" and reset the field
+    instead of navigating anywhere.
+    ====================================================*/
+
+    document.querySelectorAll(".newsletter-form").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const emailInput = form.querySelector('input[type="email"]');
+            const email = emailInput ? emailInput.value.trim() : "";
+
+            showDemoNotice(email
+                ? `Thanks for subscribing! We'll send updates to ${email}.`
+                : "Thanks for subscribing!");
+
+            form.reset();
+        });
+    });
+
     // Auth buttons, theme toggle, and RTL toggle all live inside the
     // header markup that navbar.js injects into #navbar. That injection
     // happens on DOMContentLoaded too, so instead of assuming the
