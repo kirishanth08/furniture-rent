@@ -3892,6 +3892,11 @@ FOOTER SOCIAL ICONS
     max-width: 220px;
 }
 
+.footer-contact li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .footer-col-brand {
     flex: 1 1 280px;
     max-width: 360px;

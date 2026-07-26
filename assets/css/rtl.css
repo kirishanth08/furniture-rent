@@ -11,6 +11,65 @@ left/right CSS in style.css and admin.css.
     text-align: right;
 }
 
+/* ============================================
+   BIDI TEXT FIX
+   The content on this site is English (LTR script)
+   even when the layout is switched to RTL demo mode.
+   Setting dir="rtl" on <html> makes the browser apply
+   direction:rtl (this is the browser's built-in default
+   behavior for the dir attribute, not something set in
+   this stylesheet). That forces every paragraph to be
+   treated as an RTL bidi paragraph. For plain, untranslated
+   English sentences this doesn't reorder the words - but it
+   does cause trailing punctuation (., ?, !, :) at the very
+   end of a sentence to flip to the visual FRONT instead of
+   staying after the content. This happens even with a single
+   plain text node, e.g.:
+     <button class="accordion-button">
+         Is the Security Deposit Refundable?
+     </button>
+   renders as "?Is the Security Deposit Refundable" once
+   dir="rtl" is applied, because the Unicode Bidi Algorithm
+   resolves a trailing neutral character (like "?") using the
+   paragraph's base direction (RTL) when it sits at the very
+   end of the text, rather than keeping it attached to the
+   preceding English word.
+
+   Fix: let actual text containers resolve their own bidi
+   paragraph direction from their content (plaintext) so
+   English sentences keep normal left-to-right internal
+   order - and punctuation stays after the content - while
+   everything else (alignment, margins, icon spacing) still
+   mirrors correctly via the rules below.
+   ============================================ */
+[dir="rtl"] p,
+[dir="rtl"] div,
+[dir="rtl"] li,
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] label,
+[dir="rtl"] button,
+[dir="rtl"] .accordion-button,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] blockquote,
+[dir="rtl"] td,
+[dir="rtl"] th,
+[dir="rtl"] dd,
+[dir="rtl"] dt,
+[dir="rtl"] figcaption,
+[dir="rtl"] small,
+[dir="rtl"] strong,
+[dir="rtl"] em,
+[dir="rtl"] b,
+[dir="rtl"] i {
+    unicode-bidi: plaintext;
+}
+
 /* Pricing card feature list (padding-left: 0) */
 [dir="rtl"] .pricing-card ul {
     padding-left: 1rem;
@@ -38,6 +97,18 @@ left/right CSS in style.css and admin.css.
 [dir="rtl"] .register-benefits ul {
     padding-left: 1rem;
     padding-right: 0;
+}
+
+/* Footer link/contact lists: Bootstrap's .list-unstyled only zeroes
+   padding-left, not the browser's default padding-inline-start. In
+   RTL that default resolves to padding-right, so the lists keep a
+   ~40px right indent while the h5 heading above them (no padding)
+   sits flush right - misaligning the heading from its own column
+   content. */
+[dir="rtl"] .footer-links,
+[dir="rtl"] .footer-contact {
+    padding-right: 0;
+    padding-left: initial;
 }
 
 /* Admin accent-border cards: mirror the stripe to the right edge */
@@ -103,13 +174,13 @@ left/right CSS in style.css and admin.css.
 }
 
 [dir="rtl"] .breadcrumb-item + .breadcrumb-item {
-    padding-right: 0.5rem;
-    padding-left: 0;
+    padding-left: 0.5rem;
+    padding-right: 0;
 }
 
 [dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
-    padding-right: 0;
-    padding-left: 0.5rem;
+    padding-left: 0;
+    padding-right: 0.5rem;
 }
 
 /* Customer dashboard shell: mirror the sidebar/main split and align
@@ -132,4 +203,18 @@ left/right CSS in style.css and admin.css.
 
 [dir="rtl"] .dashboard-user {
     flex-direction: row-reverse;
+}
+
+/* Native <select> dropdowns (e.g. "Sort by: Most Popular" on the
+   catalog page): Bootstrap's .form-select reserves space on the
+   physical right for its chevron background-image and pins the
+   icon there with background-position. Neither is a logical
+   property, so in RTL neither moves - the reserved padding stays
+   on the right while the select's own text becomes right-aligned,
+   pushing the text straight into the chevron. Mirror both so the
+   icon and its reserved space move to the left together. */
+[dir="rtl"] .form-select {
+    background-position: left 0.75rem center;
+    padding-right: 0.75rem;
+    padding-left: 2.25rem;
 }
