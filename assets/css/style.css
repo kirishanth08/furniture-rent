@@ -1154,9 +1154,33 @@ FAQ
 
     padding: 22px;
 
+    /* Reserve space on the end side so long questions never run into the
+       dropdown icon. The icon is taken out of flex flow below and pinned
+       at a fixed offset, so this is what actually keeps the gap. */
+    padding-right: 56px;
+
     font-weight: 700;
 
     font-size: 17px;
+
+}
+
+/* Bootstrap positions the accordion icon with margin-left: auto inside a
+   flex row, so the gap between text and icon shrinks to nothing once a
+   question wraps close to the button's full width. Pinning the icon at
+   a fixed offset from the edge (instead of letting flex push it) keeps
+   a consistent gap regardless of question length. */
+.custom-faq .accordion-button::after {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 22px;
+
+    transform: translateY(-50%);
+
+    margin-left: 0;
 
 }
 
@@ -1314,7 +1338,23 @@ CONTACT FAQ
 
     padding: 22px;
 
+    padding-right: 56px;
+
     font-weight: 700;
+
+}
+
+.contact-faq .accordion-button::after {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 22px;
+
+    transform: translateY(-50%);
+
+    margin-left: 0;
 
 }
 
@@ -1743,9 +1783,25 @@ HOW IT WORKS FINAL
 
     padding: 22px;
 
+    padding-right: 56px;
+
     font-weight: 700;
 
     font-size: 17px;
+
+}
+
+#worksFAQ .accordion-button::after {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 22px;
+
+    transform: translateY(-50%);
+
+    margin-left: 0;
 
 }
 

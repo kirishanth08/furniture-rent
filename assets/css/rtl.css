@@ -173,12 +173,12 @@ left/right CSS in style.css and admin.css.
     flex-direction: row-reverse;
 }
 
-[dir="rtl"] .breadcrumb-item + .breadcrumb-item {
+[dir="rtl"] .breadcrumb-item+.breadcrumb-item {
     padding-left: 0.5rem;
     padding-right: 0;
 }
 
-[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+[dir="rtl"] .breadcrumb-item+.breadcrumb-item::before {
     padding-left: 0;
     padding-right: 0.5rem;
 }
@@ -217,4 +217,23 @@ left/right CSS in style.css and admin.css.
     background-position: left 0.75rem center;
     padding-right: 0.75rem;
     padding-left: 2.25rem;
+}
+
+/* FAQ accordion icon (pricing/services/contact pages): mirrors the LTR
+   fix in style.css, which pins the dropdown icon at a fixed offset
+   (instead of a flex auto-margin) so it keeps a consistent gap from the
+   question text. In RTL the icon moves to the start (left) side, so the
+   reserved padding flips too. */
+[dir="rtl"] .custom-faq .accordion-button,
+[dir="rtl"] .contact-faq .accordion-button,
+[dir="rtl"] #worksFAQ .accordion-button {
+    padding-right: 22px;
+    padding-left: 56px;
+}
+
+[dir="rtl"] .custom-faq .accordion-button::after,
+[dir="rtl"] .contact-faq .accordion-button::after,
+[dir="rtl"] #worksFAQ .accordion-button::after {
+    right: auto;
+    left: 22px;
 }
