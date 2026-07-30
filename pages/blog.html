@@ -91,61 +91,55 @@ BLOG HERO
 FEATURED BLOG
 ==========================================-->
 
-    <section class="section-padding pt-0">
+    <section class="section-padding pt-5">
 
-        <div class="container">
+        <div class="row align-items-center g-5">
 
-            <div class="pricing-plan blog-card" data-blog-slug="interior-design-ideas-modern-apartments"
-                data-blog-search="featured interior design ideas modern apartments">
+            <div class="col-lg-6">
 
-                <div class="row align-items-center g-5">
+                <img src="https://imgs.search.brave.com/Wqe7NAbr2FJRnGCeGRRHUyYTlgZztVhr9kZM6zTfLg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90YWxh/dGlhbmRwYXJ0bmVy/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjIvMDEvVFJF/TkRTLTYud2VicA"
+                    class="img-fluid rounded-4" loading="lazy" decoding="async" alt="Featured Blog">
 
-                    <div class="col-lg-6">
+            </div>
 
-                        <img src="https://imgs.search.brave.com/Wqe7NAbr2FJRnGCeGRRHUyYTlgZztVhr9kZM6zTfLg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90YWxh/dGlhbmRwYXJ0bmVy/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjIvMDEvVFJF/TkRTLTYud2VicA"
-                            class="img-fluid rounded-4" loading="lazy" decoding="async" alt="Featured Blog">
+            <div class="col-lg-6">
 
-                    </div>
+                <span class="badge bg-warning text-dark">
 
-                    <div class="col-lg-6">
+                    Featured
 
-                        <span class="badge bg-warning text-dark">
+                </span>
 
-                            Featured
+                <h2 class="mt-3">
 
-                        </span>
+                    10 Interior Design Ideas
+                    For Modern Apartments
 
-                        <h2 class="mt-3">
+                </h2>
 
-                            10 Interior Design Ideas
-                            For Modern Apartments
+                <p class="mt-4">
 
-                        </h2>
+                    Learn how premium furniture can completely
+                    transform a small apartment into a luxurious,
+                    comfortable and functional home.
 
-                        <p class="mt-4">
+                </p>
 
-                            Learn how premium furniture can completely
-                            transform a small apartment into a luxurious,
-                            comfortable and functional home.
+                <div class="mt-4">
 
-                        </p>
+                    <a href="blog-details.html?slug=interior-design-ideas-modern-apartments" class="btn btn-primary">
 
-                        <div class="mt-4">
+                        Read Article
 
-                            <a href="blog-details.html?slug=interior-design-ideas-modern-apartments"
-                                class="btn btn-primary">
-
-                                Read Article
-
-                            </a>
-
-                        </div>
-
-                    </div>
+                    </a>
 
                 </div>
 
             </div>
+
+        </div>
+
+        </div>
 
         </div>
 
@@ -157,6 +151,35 @@ LATEST ARTICLES + SIDEBAR
     <section class="section-padding pt-0">
 
         <div class="container">
+
+            <!-- MOBILE/TABLET SEARCH (shown above the articles on screens under lg) -->
+
+            <div class="d-lg-none mb-4">
+
+                <div class="pricing-plan">
+
+                    <h5 class="mb-3">
+
+                        Search
+
+                    </h5>
+
+                    <div class="input-group">
+
+                        <input type="text" class="form-control blog-search-input" id="blogSearchInputMobile"
+                            placeholder="Search articles...">
+
+                        <button class="btn btn-primary blog-search-btn" id="blogSearchBtnMobile" type="button">
+
+                            <i class="fa fa-search"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
             <div class="row">
 
@@ -464,7 +487,7 @@ LATEST ARTICLES + SIDEBAR
 
                     <div class="blog-sidebar">
 
-                        <div class="pricing-plan mb-4">
+                        <div class="pricing-plan mb-4 d-none d-lg-block">
 
                             <h5 class="mb-3">
 
@@ -474,10 +497,10 @@ LATEST ARTICLES + SIDEBAR
 
                             <div class="input-group">
 
-                                <input type="text" class="form-control" id="blogSearchInput"
+                                <input type="text" class="form-control blog-search-input" id="blogSearchInput"
                                     placeholder="Search articles...">
 
-                                <button class="btn btn-primary" id="blogSearchBtn" type="button">
+                                <button class="btn btn-primary blog-search-btn" id="blogSearchBtn" type="button">
 
                                     <i class="fa fa-search"></i>
 
@@ -761,13 +784,16 @@ BLOG CTA
             the search button — previously this box did nothing.
             ====================================================*/
 
-            const searchInput = document.getElementById("blogSearchInput");
-            const searchBtn = document.getElementById("blogSearchBtn");
+            // There are two search boxes: one shown above the articles on
+            // mobile/tablet, and one in the sidebar on desktop. Both stay
+            // in sync and either one can trigger the filter.
+            const searchInputs = document.querySelectorAll(".blog-search-input");
+            const searchBtns = document.querySelectorAll(".blog-search-btn");
             const cardItems = document.querySelectorAll("[data-blog-slug]");
             const noResults = document.getElementById("blogNoResults");
 
-            function runSearch() {
-                const query = (searchInput.value || "").trim().toLowerCase();
+            function runSearch(query) {
+                query = (query || "").trim().toLowerCase();
                 let visibleCount = 0;
 
                 cardItems.forEach(card => {
@@ -782,22 +808,31 @@ BLOG CTA
                 }
             }
 
-            if (searchInput) {
-                searchInput.addEventListener("input", runSearch);
-                searchInput.addEventListener("keydown", (e) => {
+            searchInputs.forEach(input => {
+                input.addEventListener("input", (e) => {
+                    // Keep the other search box's value in sync.
+                    searchInputs.forEach(other => {
+                        if (other !== e.target) other.value = e.target.value;
+                    });
+                    runSearch(e.target.value);
+                });
+                input.addEventListener("keydown", (e) => {
                     if (e.key === "Enter") {
                         e.preventDefault();
-                        runSearch();
+                        runSearch(e.target.value);
                     }
                 });
-            }
+            });
 
-            if (searchBtn) {
-                searchBtn.addEventListener("click", (e) => {
+            searchBtns.forEach(btn => {
+                btn.addEventListener("click", (e) => {
                     e.preventDefault();
-                    runSearch();
+                    const activeInput = document.activeElement && document.activeElement.classList.contains("blog-search-input")
+                        ? document.activeElement
+                        : searchInputs[0];
+                    runSearch(activeInput ? activeInput.value : "");
                 });
-            }
+            });
 
             /*====================================================
             WHOLE-CARD CLICK

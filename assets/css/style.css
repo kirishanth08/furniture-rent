@@ -424,6 +424,33 @@ body {
     }
 }
 
+/* Nav bar squeeze fix for tablet-landscape widths (~992px-1199px, e.g. 1024).
+   Bootstrap's navbar-expand-lg switches to the full horizontal nav at 992px,
+   but the container (960px here) isn't wide enough for the brand + 7 nav
+   links + theme/RTL/auth buttons at their normal desktop size, so individual
+   links were wrapping onto a second line and breaking vertical alignment.
+   Tighten spacing just in this range so the whole bar stays on one line. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 8px;
+        font-size: 0.92rem;
+    }
+
+    .navbar-brand .brand-word {
+        font-size: 1.4rem;
+    }
+
+    .nav-cta-btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
 @media (max-width: 991px) {
     .hero-image-wrapper {
         margin-top: 3rem;
