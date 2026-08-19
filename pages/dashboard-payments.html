@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3F51B5">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Payments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark-mode");
+                document.body?.classList.add("dark-mode");
+            }
+        })();
+    </script>
+    <script>
+        (() => {
+            const dir = localStorage.getItem("dir");
+            if (dir === "rtl") {
+                document.documentElement.setAttribute("dir", "rtl");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+
+<body class="">
+    <div id="navbar"></div>
+    <!-- ==========================================
+DASHBOARD LAYOUT
+========================================== -->
+
+    <div class="dashboard-sidebar-overlay" id="dashboardSidebarOverlay" aria-hidden="true"></div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- Sidebar -->
+
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+            <div class="dashboard-logo dashboard-sidebar-head">
+
+                <h3>
+
+                    Furni<span>Rent</span>
+
+                </h3>
+
+                <button class="dashboard-sidebar-close" type="button" id="dashboardSidebarClose"
+                    aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <ul class="dashboard-menu">
+
+                <li>
+
+                    <a href="dashboard-home.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard-rentals.html">
+
+                        <i class="fa-solid fa-couch"></i>
+
+                        My Rentals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a class="active" href="dashboard-payments.html">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                        Payments
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard-requests.html">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        Support
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#" id="customerLogoutBtn">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="../index.html">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Back Website
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="dashboard-main">
+
+            <!-- Topbar -->
+
+            <div class="dashboard-topbar">
+
+                <div class="dashboard-title-group">
+
+                    <button class="dashboard-sidebar-toggle" type="button" id="dashboardSidebarToggle"
+                        aria-controls="dashboardSidebar" aria-expanded="false" aria-label="Open dashboard menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <h2>
+
+                        Dashboard
+
+                    </h2>
+
+                </div>
+
+                <div class="dashboard-user">
+
+                    <img src="https://imgs.search.brave.com/Rk1Ehpfg_SmCaAfly9IGLCM7LdnSfENEazFx2p3zs7E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTU1/NTcyMzEwOS9waG90/by9zbWlsaW5nLXlv/dW5nLW1hbi1jaG9v/c2luZy1hLXByb2Zp/bGUtb24tYS1zbWFy/dC1waG9uZS1kYXRp/bmctYXBwLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1DUzBl/VTVCekt4d19nbEcz/bzByZmVVenppUGVs/dmNwa2xLWVVmaS1E/NllFPQ"
+                        alt="User" loading="lazy" decoding="async" class="rounded-circle">
+
+                    <div>
+
+                        <strong>
+
+                            John Doe
+
+                        </strong>
+
+                        <small>
+
+                            Premium Member
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Dashboard Content Starts Here -->
+
+            <section class="dashboard-content">
+
+                <!-- ==========================================
+PAYMENT SUMMARY
+========================================== -->
+
+                <div class="row g-4 mb-5">
+
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-success">
+
+                                <i class="fa-solid fa-wallet"></i>
+
+                            </div>
+
+                            <h2>₹18,495</h2>
+
+                            <p>Total Paid</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-warning">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+                            <h2>₹1,499</h2>
+
+                            <p>Upcoming Payment</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-primary">
+
+                                <i class="fa-solid fa-file-invoice"></i>
+
+                            </div>
+
+                            <h2>12</h2>
+
+                            <p>Invoices</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-danger">
+
+                                <i class="fa-solid fa-percent"></i>
+
+                            </div>
+
+                            <h2>10%</h2>
+
+                            <p>Member Discount</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================================
+PAYMENT HISTORY
+========================================== -->
+
+                <div class="dashboard-panel">
+
+                    <h3 class="mb-4">
+
+                        Payment History
+
+                    </h3>
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Invoice</th>
+
+                                    <th>Date</th>
+
+                                    <th>Amount</th>
+
+                                    <th>Method</th>
+
+                                    <th>Status</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>#FR1001</td>
+
+                                    <td>12 Jun 2026</td>
+
+                                    <td>₹1,499</td>
+
+                                    <td>UPI</td>
+
+                                    <td>
+
+                                        <span class="badge bg-success">
+
+                                            Paid
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-sm btn-primary demo-action">
+
+                                            Download
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>#FR1002</td>
+
+                                    <td>12 May 2026</td>
+
+                                    <td>₹1,499</td>
+
+                                    <td>Credit Card</td>
+
+                                    <td>
+
+                                        <span class="badge bg-success">
+
+                                            Paid
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-sm btn-primary demo-action">
+
+                                            Download
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>#FR1003</td>
+
+                                    <td>12 Apr 2026</td>
+
+                                    <td>₹999</td>
+
+                                    <td>Net Banking</td>
+
+                                    <td>
+
+                                        <span class="badge bg-warning text-dark">
+
+                                            Pending
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-sm btn-warning demo-action">
+
+                                            Pay Now
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>#FR1004</td>
+
+                                    <td>12 Mar 2026</td>
+
+                                    <td>₹1,999</td>
+
+                                    <td>UPI</td>
+
+                                    <td>
+
+                                        <span class="badge bg-success">
+
+                                            Paid
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-sm btn-primary demo-action">
+
+                                            Download
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================================
+PAYMENT METHODS
+========================================== -->
+
+                <div class="row mt-4">
+
+                    <div class="col-lg-6">
+
+                        <div class="dashboard-panel">
+
+                            <h4>
+
+                                Saved Payment Methods
+
+                            </h4>
+
+                            <hr>
+
+                            <p>
+
+                                💳 Visa **** **** 4589
+
+                            </p>
+
+                            <hr>
+
+                            <p>
+
+                                🏦 SBI Bank Account
+
+                            </p>
+
+                            <hr>
+
+                            <p>
+
+                                📱 Google Pay
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="dashboard-panel">
+
+                            <h4>
+
+                                Upcoming Payment
+
+                            </h4>
+
+                            <hr>
+
+                            <h2>
+
+                                ₹1,499
+
+                            </h2>
+
+                            <p>
+
+                                Due Date
+
+                                <strong>
+
+                                    15 July 2026
+
+                                </strong>
+
+                            </p>
+
+                            <a href="checkout.html" class="btn btn-warning w-100 mt-3">
+
+                                Pay Now
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <div id="footer"></div>
+
+
+    <button class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-none"
+        aria-label="Back to Top" style="width: 50px; height: 50px; z-index: 999;">
+        <i class="fa-solid fa-arrow-up text-white"></i>
+    </button>
+
+    <div id="loader">
+
+        <div class="skeleton skeleton-card"></div>
+
+        <div class="skeleton skeleton-card"></div>
+
+        <div class="skeleton skeleton-card"></div>
+
+    </div>
+
+    <div id="dashboardContent" style="display:none;">
+
+        <!-- Existing dashboard -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+    <script>
+        FurniAuth.requireAuth("customer", "login.html");
+
+        document.getElementById("customerLogoutBtn")?.addEventListener("click", (e) => {
+            e.preventDefault();
+            FurniAuth.logout();
+            window.location.href = "login.html";
+        });
+    </script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/footer.js"></script>
+
+</body>
+
+</html>
