@@ -1,13 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // This script runs on both the root index.html and every page inside
+    // /pages/, so links can't be hardcoded the same way for both. Detect
+    // where we are and build the right relative prefixes.
+    const onRoot = !window.location.pathname.includes("/pages/");
+    const toPage = onRoot ? "pages/" : "";
+    const toHome = onRoot ? "index.html" : "../index.html";
+
     document.getElementById("navbar").innerHTML = `
-    
+
     <header class="site-header">
         <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
             <div class="container">
     
                 <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-3 text-primary"
-                    href="index.html"
+                    href="${toHome}"
                     style="font-family: 'Merriweather', serif;">
                     <svg class="brand-mark" width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FurniRent logo">
                         <rect x="0" y="0" width="42" height="42" rx="12" fill="#3F51B5"/>
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item dropdown">
     
                             <a class="nav-link dropdown-toggle fw-semibold"
-                                href="index.html"
+                                href="${toHome}"
                                 id="homeNavDropdown"
                                 role="button"
                                 data-bs-toggle="dropdown"
@@ -53,19 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <li>
     
                                     <a class="dropdown-item"
-                                        href="index.html">
-    
+                                        href="${toHome}">
+
                                         <i class="fa-solid fa-house me-2 text-primary"></i>
                                         Home 1
-    
+
                                     </a>
-    
+
                                 </li>
-    
+
                                 <li>
-    
+
                                     <a class="dropdown-item"
-                                        href="home-2.html">
+                                        href="${toPage}home-2.html">
     
                                         <i class="fa-solid fa-house-chimney me-2 text-primary"></i>
                                         Home 2
@@ -81,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="about.html">
+                                href="${toPage}about.html">
     
                                 About
     
@@ -92,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="catalog.html">
+                                href="${toPage}catalog.html">
     
                                 Catalog
     
@@ -103,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="pricing.html">
+                                href="${toPage}pricing.html">
     
                                 Pricing
     
@@ -114,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="services.html">
+                                href="${toPage}services.html">
     
                                 Services
     
@@ -125,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="blog.html">
+                                href="${toPage}blog.html">
     
                                 Blog
     
@@ -136,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="nav-item">
     
                             <a class="nav-link fw-semibold"
-                                href="contact.html">
+                                href="${toPage}contact.html">
     
                                 Contact
     
@@ -172,14 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             id="authButtons"
                             class="d-flex align-items-center gap-2">
     
-                            <a href="login.html"
+                            <a href="${toPage}login.html"
                                 class="btn btn-outline-primary fw-semibold nav-cta-btn">
     
                                 Login
     
                             </a>
     
-                            <a href="register.html"
+                            <a href="${toPage}register.html"
                                 class="btn btn-warning fw-semibold text-dark nav-cta-btn">
     
                                 Sign Up
@@ -200,13 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     `;
 
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
     document.querySelectorAll(".navbar .nav-link").forEach(link => {
 
         const href = link.getAttribute("href");
+        const hrefFile = href ? href.split("/").pop() : "";
 
-        if (href === currentPage) {
+        if (hrefFile === currentPage) {
             link.classList.add("active");
         }
 
@@ -215,8 +223,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".dropdown-item").forEach(item => {
 
         const href = item.getAttribute("href");
+        const hrefFile = href ? href.split("/").pop() : "";
 
-        if (href === currentPage) {
+        if (hrefFile === currentPage) {
 
             item.classList.add("active");
 

@@ -37,6 +37,13 @@ function showDemoNotice(message) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    // main.js runs on both root index.html and every page inside /pages/,
+    // so the auth dropdown links and logout redirects it renders below
+    // need to know which one they're on.
+    const onRoot = !window.location.pathname.includes("/pages/");
+    const toPage = onRoot ? "pages/" : "";
+    const toHome = onRoot ? "index.html" : "../index.html";
+
     document.querySelectorAll(".demo-action").forEach((el) => {
         el.addEventListener("click", (e) => {
             e.preventDefault();
@@ -107,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <span>${firstName}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="navUserMenuBtn">
-                        <li><a class="dropdown-item" href="dashboard-home.html"><i class="fa-solid fa-gauge me-2"></i>Dashboard</a></li>
-                        <li><a class="dropdown-item" href="dashboard-rentals.html"><i class="fa-solid fa-box me-2"></i>My Rentals</a></li>
+                        <li><a class="dropdown-item" href="${toPage}dashboard-home.html"><i class="fa-solid fa-gauge me-2"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="${toPage}dashboard-rentals.html"><i class="fa-solid fa-box me-2"></i>My Rentals</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="#" id="navLogoutBtn"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
                     </ul>
@@ -121,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 navLogoutBtn.addEventListener("click", function (e) {
                     e.preventDefault();
                     FurniAuth.logout();
-                    window.location.href = "index.html";
+                    window.location.href = toHome;
                 });
             }
 
@@ -139,8 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <span>${adminDisplayName}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="navAdminMenuBtn">
-                        <li><a class="dropdown-item" href="admin-dashboard.html"><i class="fa-solid fa-gauge me-2"></i>Admin Dashboard</a></li>
-                        <li><a class="dropdown-item" href="dashboard-home.html"><i class="fa-solid fa-user me-2"></i>Customer View</a></li>
+                        <li><a class="dropdown-item" href="${toPage}admin-dashboard.html"><i class="fa-solid fa-gauge me-2"></i>Admin Dashboard</a></li>
+                        <li><a class="dropdown-item" href="${toPage}dashboard-home.html"><i class="fa-solid fa-user me-2"></i>Customer View</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="#" id="navAdminLogoutBtn"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
                     </ul>
@@ -153,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 navAdminLogoutBtn.addEventListener("click", function (e) {
                     e.preventDefault();
                     FurniAuth.logout();
-                    window.location.href = "admin-login.html";
+                    window.location.href = toPage + "admin-login.html";
                 });
             }
 
