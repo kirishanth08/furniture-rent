@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="theme-color" content="#3F51B5">
     <meta name="robots" content="noindex,nofollow">
-    <title>Rental</title>
+    <title>Requests</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,12 +37,13 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 
 <body class="">
     <div id="navbar"></div>
+
     <!-- ==========================================
 DASHBOARD LAYOUT
 ========================================== -->
@@ -86,7 +87,7 @@ DASHBOARD LAYOUT
 
                 <li>
 
-                    <a class="active" href="dashboard-rentals.html">
+                    <a href="dashboard-rentals.html">
 
                         <i class="fa-solid fa-couch"></i>
 
@@ -110,7 +111,7 @@ DASHBOARD LAYOUT
 
                 <li>
 
-                    <a href="dashboard-requests.html">
+                    <a class="active" href="dashboard-requests.html">
 
                         <i class="fa-solid fa-headset"></i>
 
@@ -201,60 +202,78 @@ DASHBOARD LAYOUT
             <section class="dashboard-content">
 
                 <!-- ==========================================
-RENTAL SUMMARY
+SUPPORT SUMMARY
 ========================================== -->
 
                 <div class="row g-4 mb-5">
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
 
                         <div class="dashboard-card">
 
                             <div class="dashboard-icon bg-primary">
 
-                                <i class="fa-solid fa-couch"></i>
+                                <i class="fa-solid fa-ticket"></i>
 
                             </div>
 
-                            <h2>05</h2>
+                            <h2>08</h2>
 
-                            <p>Current Rentals</p>
+                            <p>Total Requests</p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
 
                         <div class="dashboard-card">
 
                             <div class="dashboard-icon bg-success">
 
-                                <i class="fa-solid fa-check"></i>
+                                <i class="fa-solid fa-circle-check"></i>
 
                             </div>
 
-                            <h2>18</h2>
+                            <h2>05</h2>
 
-                            <p>Completed Rentals</p>
+                            <p>Resolved</p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
 
                         <div class="dashboard-card">
 
                             <div class="dashboard-icon bg-warning">
 
-                                <i class="fa-solid fa-hourglass-half"></i>
+                                <i class="fa-solid fa-spinner"></i>
 
                             </div>
 
                             <h2>02</h2>
 
-                            <p>Pending Returns</p>
+                            <p>In Progress</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-danger">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+                            <h2>01</h2>
+
+                            <p>Pending</p>
 
                         </div>
 
@@ -263,14 +282,14 @@ RENTAL SUMMARY
                 </div>
 
                 <!-- ==========================================
-MY RENTALS
+SUPPORT TICKETS
 ========================================== -->
 
                 <div class="dashboard-panel">
 
                     <h3 class="mb-4">
 
-                        My Rental Products
+                        Support Requests
 
                     </h3>
 
@@ -282,13 +301,15 @@ MY RENTALS
 
                                 <tr>
 
-                                    <th>Furniture</th>
+                                    <th>Ticket ID</th>
 
-                                    <th>Plan</th>
+                                    <th>Subject</th>
 
-                                    <th>Monthly Rent</th>
+                                    <th>Date</th>
 
                                     <th>Status</th>
+
+                                    <th>Priority</th>
 
                                     <th>Action</th>
 
@@ -300,77 +321,17 @@ MY RENTALS
 
                                 <tr>
 
-                                    <td>Luxury Sofa Set</td>
+                                    <td>#SR1001</td>
 
-                                    <td>Standard</td>
+                                    <td>Delivery Delay</td>
 
-                                    <td>₹1,499</td>
-
-                                    <td>
-
-                                        <span class="badge bg-success">
-
-                                            Active
-
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        <a href="#" class="btn btn-sm btn-primary demo-action">
-
-                                            Extend
-
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td>Queen Size Bed</td>
-
-                                    <td>Long-Term</td>
-
-                                    <td>₹1,999</td>
-
-                                    <td>
-
-                                        <span class="badge bg-success">
-
-                                            Active
-
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        <a href="#" class="btn btn-sm btn-primary demo-action">
-
-                                            Extend
-
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td>Study Table</td>
-
-                                    <td>Starter</td>
-
-                                    <td>₹999</td>
+                                    <td>10 Jul 2026</td>
 
                                     <td>
 
                                         <span class="badge bg-warning text-dark">
 
-                                            Ending Soon
+                                            In Progress
 
                                         </span>
 
@@ -378,9 +339,15 @@ MY RENTALS
 
                                     <td>
 
-                                        <a href="#" class="btn btn-sm btn-danger demo-action">
+                                        High
 
-                                            Return
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-primary btn-sm demo-action">
+
+                                            View
 
                                         </a>
 
@@ -390,17 +357,17 @@ MY RENTALS
 
                                 <tr>
 
-                                    <td>Dining Table</td>
+                                    <td>#SR1002</td>
 
-                                    <td>Standard</td>
+                                    <td>Furniture Exchange</td>
 
-                                    <td>₹1,699</td>
+                                    <td>08 Jul 2026</td>
 
                                     <td>
 
-                                        <span class="badge bg-info">
+                                        <span class="badge bg-success">
 
-                                            Renewed
+                                            Resolved
 
                                         </span>
 
@@ -408,9 +375,51 @@ MY RENTALS
 
                                     <td>
 
-                                        <a href="#" class="btn btn-sm btn-success demo-action">
+                                        Medium
 
-                                            View
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-success btn-sm demo-action">
+
+                                            Closed
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>#SR1003</td>
+
+                                    <td>Payment Issue</td>
+
+                                    <td>05 Jul 2026</td>
+
+                                    <td>
+
+                                        <span class="badge bg-danger">
+
+                                            Pending
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        High
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-warning btn-sm demo-action">
+
+                                            Follow Up
 
                                         </a>
 
@@ -427,71 +436,95 @@ MY RENTALS
                 </div>
 
                 <!-- ==========================================
-RENTAL HISTORY
+CREATE TICKET
 ========================================== -->
 
                 <div class="dashboard-panel mt-4">
 
                     <h3 class="mb-4">
 
-                        Rental Timeline
+                        Create Support Request
 
                     </h3>
 
-                    <ul class="list-group">
+                    <form>
 
-                        <li class="list-group-item">
+                        <div class="row g-4">
 
-                            📦 Sofa Delivered
+                            <div class="col-md-6">
 
-                            <span class="float-end">
+                                <label class="form-label">
 
-                                02 Jan 2026
+                                    Subject
 
-                            </span>
+                                </label>
 
-                        </li>
+                                <input type="text" class="form-control" placeholder="Enter subject">
 
-                        <li class="list-group-item">
+                            </div>
 
-                            💳 Payment Successful
+                            <div class="col-md-6">
 
-                            <span class="float-end">
+                                <label class="form-label">
 
-                                03 Jan 2026
+                                    Category
 
-                            </span>
+                                </label>
 
-                        </li>
+                                <select class="form-select">
 
-                        <li class="list-group-item">
+                                    <option>Delivery</option>
 
-                            🔄 Rental Extended
+                                    <option>Payment</option>
 
-                            <span class="float-end">
+                                    <option>Furniture Damage</option>
 
-                                01 Apr 2026
+                                    <option>Exchange</option>
 
-                            </span>
+                                    <option>Other</option>
 
-                        </li>
+                                </select>
 
-                        <li class="list-group-item">
+                            </div>
 
-                            ⭐ Service Completed
+                            <div class="col-12">
 
-                            <span class="float-end">
+                                <label class="form-label">
 
-                                18 Jun 2026
+                                    Message
 
-                            </span>
+                                </label>
 
-                        </li>
+                                <textarea class="form-control" rows="5" placeholder="Describe your issue..."></textarea>
 
-                    </ul>
+                            </div>
+
+                            <div class="col-12">
+
+                                <button type="button" id="submitRequestBtn" class="btn btn-primary">
+
+                                    Submit Request
+
+                                </button>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div id="requestSuccessMsg" class="alert alert-success d-none mb-0" role="alert">
+
+                                    <i class="fa-solid fa-circle-check me-2"></i>Request submitted! Our support team
+                                    will get back to you soon.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
 
                 </div>
-
 
             </section>
 
@@ -524,9 +557,9 @@ RENTAL HISTORY
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../assets/js/storage.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
 
     <script>
         FurniAuth.requireAuth("customer", "login.html");
@@ -536,11 +569,25 @@ RENTAL HISTORY
             FurniAuth.logout();
             window.location.href = "login.html";
         });
+
+        document.getElementById("submitRequestBtn")?.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const form = e.target.closest("form");
+            const successMsg = document.getElementById("requestSuccessMsg");
+
+            successMsg?.classList.remove("d-none");
+            successMsg?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+            form?.reset();
+
+            setTimeout(() => {
+                successMsg?.classList.add("d-none");
+            }, 5000);
+        });
     </script>
-
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/footer.js"></script>
-
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
 
 </body>
 

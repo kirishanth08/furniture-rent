@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="theme-color" content="#3F51B5">
-    <title>Register | FurniRent</title>
+    <title>login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Merriweather:wght@700;800&display=swap"
         rel="stylesheet">
+
     <script>
         (() => {
             const theme = localStorage.getItem("theme");
@@ -35,16 +36,16 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 
 <body class="">
 
 
-    <!--=========================================
-REGISTER SECTION
-==========================================-->
+    <!-- ==========================================
+LOGIN SECTION
+========================================== -->
 
     <section class="section-padding">
 
@@ -71,33 +72,20 @@ REGISTER SECTION
                         </a>
 
                         <p class="text-center text-muted mb-4">
-                            Welcome! Create your account to get started.
+                            Welcome back! Please login to your account.
                         </p>
 
                         <h2 class="mb-4 text-center">
 
-                            Create Account
+                            Login
 
                         </h2>
 
-                        <div id="registerAlert" class="alert alert-danger d-none" role="alert"></div>
+                        <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
 
-                        <form id="registerForm">
+                        <form id="loginForm">
 
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Full Name
-
-                                </label>
-
-                                <input type="text" id="registerName" class="form-control form-control-lg"
-                                    placeholder="Enter your full name" required>
-
-                            </div>
-
-                            <div class="mb-3">
+                            <div class="mb-4">
 
                                 <label class="form-label">
 
@@ -105,21 +93,8 @@ REGISTER SECTION
 
                                 </label>
 
-                                <input type="email" id="registerEmail" class="form-control form-control-lg"
-                                    placeholder="Enter your email" required>
-
-                            </div>
-
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Phone Number
-
-                                </label>
-
-                                <input type="tel" class="form-control form-control-lg"
-                                    placeholder="Enter mobile number">
+                                <input type="email" id="loginEmail" class="form-control form-control-lg"
+                                    placeholder="Enter email" required>
 
                             </div>
 
@@ -133,10 +108,10 @@ REGISTER SECTION
 
                                 <div class="password-box">
 
-                                    <input type="password" id="registerPassword" class="form-control form-control-lg"
-                                        placeholder="Create password" required minlength="6">
+                                    <input type="password" id="loginPassword" class="form-control form-control-lg"
+                                        placeholder="Enter password" required minlength="6">
 
-                                    <button type="button" class="password-toggle" onclick="toggleRegisterPassword()">
+                                    <button type="button" class="password-toggle" onclick="toggleLoginPassword()">
 
                                         <i class="fa-solid fa-eye"></i>
 
@@ -146,59 +121,46 @@ REGISTER SECTION
 
                             </div>
 
-                            <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-4">
 
-                                <label class="form-label">
+                                <div class="form-check">
 
-                                    Confirm Password
+                                    <input class="form-check-input" type="checkbox">
 
-                                </label>
+                                    <label class="form-check-label">
 
-                                <input type="password" id="registerConfirmPassword" class="form-control form-control-lg"
-                                    placeholder="Confirm password" required minlength="6">
+                                        Remember Me
 
-                            </div>
+                                    </label>
 
-                            <!-- Terms -->
+                                </div>
 
-                            <div class="form-check mb-4">
+                                <a href="#">
 
-                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                    Forgot Password?
 
-                                <label class="form-check-label" for="terms">
-
-                                    I agree to the
-
-                                    <a href="#">
-
-                                        Terms & Conditions
-
-                                    </a>
-
-                                </label>
+                                </a>
 
                             </div>
 
-                            <!-- Register Button -->
+                            <button class="btn btn-primary btn-lg w-100">
 
-                            <button type="submit" class="btn btn-warning btn-lg w-100 fw-semibold">
-
-                                Create Account
+                                Login
 
                             </button>
 
                             <div class="divider-text">
-                                <span>Or sign up with</span>
+                                <span>Or continue with</span>
                             </div>
 
                             <div class="social-login-buttons">
 
-                                <button type="button" id="googleSignupBtn" class="btn-social btn-google">
+                                <button type="button" id="googleLoginBtn" class="btn-social btn-google">
                                     <i class="fa-brands fa-google"></i>
                                     Continue with Google
                                 </button>
 
-                                <button type="button" id="appleSignupBtn" class="btn-social btn-apple">
+                                <button type="button" id="appleLoginBtn" class="btn-social btn-apple">
                                     <i class="fa-brands fa-apple"></i>
                                     Continue with Apple
                                 </button>
@@ -206,9 +168,6 @@ REGISTER SECTION
                             </div>
 
                             <hr class="my-4">
-
-
-                            <!-- Security -->
 
                             <div class="security-badges mt-4">
 
@@ -222,29 +181,41 @@ REGISTER SECTION
 
                                 <div>
 
-                                    <i class="fa-solid fa-user-check"></i>
+                                    <i class="fa-solid fa-shield-halved"></i>
 
-                                    Verified
+                                    Safe Login
 
                                 </div>
 
                                 <div>
 
-                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <i class="fa-solid fa-user-check"></i>
 
-                                    Safe Signup
+                                    Verified Users
 
                                 </div>
 
                             </div>
 
-                            <p class="text-center mt-4 mb-0">
+                            <p class="text-center mt-4">
 
-                                Already have an account?
+                                Don't have an account?
 
-                                <a href="login.html" id="registerToLoginLink">
+                                <a href="register.html" id="loginToRegisterLink">
 
-                                    Login
+                                    Register
+
+                                </a>
+
+                            </p>
+
+                            <p class="text-center mt-2">
+
+                                <a href="admin-login.html" class="text-decoration-none fw-semibold">
+
+                                    <i class="fa-solid fa-user-shield me-1"></i>
+
+                                    Login as Admin
 
                                 </a>
 
@@ -269,18 +240,18 @@ REGISTER SECTION
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../assets/js/storage.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script>
         (() => {
-            const form = document.getElementById("registerForm");
-            const alertBox = document.getElementById("registerAlert");
-            const redirectTo = new URLSearchParams(window.location.search).get("redirect");
+            const form = document.getElementById("loginForm");
+            const alertBox = document.getElementById("loginAlert");
 
-            const loginLink = document.getElementById("registerToLoginLink");
-            if (loginLink && redirectTo) {
-                loginLink.href = "login.html?redirect=" + encodeURIComponent(redirectTo);
+            const redirectParam = new URLSearchParams(window.location.search).get("redirect");
+            const registerLink = document.getElementById("loginToRegisterLink");
+            if (registerLink && redirectParam) {
+                registerLink.href = "register.html?redirect=" + encodeURIComponent(redirectParam);
             }
 
             if (!form) return;
@@ -288,20 +259,13 @@ REGISTER SECTION
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
 
-                const name = document.getElementById("registerName").value;
-                const email = document.getElementById("registerEmail").value;
-                const password = document.getElementById("registerPassword").value;
-                const confirmPassword = document.getElementById("registerConfirmPassword").value;
+                const email = document.getElementById("loginEmail").value;
+                const password = document.getElementById("loginPassword").value;
 
-                if (password !== confirmPassword) {
-                    alertBox.textContent = "Passwords do not match.";
-                    alertBox.classList.remove("d-none");
-                    return;
-                }
-
-                const result = FurniAuth.signup(name, email, password, "customer");
+                const result = FurniAuth.login(email, password, "customer");
 
                 if (result.success) {
+                    const redirectTo = new URLSearchParams(window.location.search).get("redirect");
                     window.location.href = redirectTo ? redirectTo : "dashboard-home.html";
                 } else {
                     alertBox.textContent = result.message;
@@ -310,11 +274,12 @@ REGISTER SECTION
             });
 
             const redirectAfterSocial = () => {
+                const redirectTo = new URLSearchParams(window.location.search).get("redirect");
                 window.location.href = redirectTo ? redirectTo : "dashboard-home.html";
             };
 
-            const googleBtn = document.getElementById("googleSignupBtn");
-            const appleBtn = document.getElementById("appleSignupBtn");
+            const googleBtn = document.getElementById("googleLoginBtn");
+            const appleBtn = document.getElementById("appleLoginBtn");
 
             if (googleBtn) {
                 googleBtn.addEventListener("click", () => {
@@ -331,8 +296,6 @@ REGISTER SECTION
             }
         })();
     </script>
-
-    
 
 </body>
 

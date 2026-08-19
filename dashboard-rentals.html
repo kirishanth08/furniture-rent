@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="theme-color" content="#3F51B5">
     <meta name="robots" content="noindex,nofollow">
-    <title>Requests</title>
+    <title>Rental</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,13 +37,12 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 
 <body class="">
     <div id="navbar"></div>
-
     <!-- ==========================================
 DASHBOARD LAYOUT
 ========================================== -->
@@ -87,7 +86,7 @@ DASHBOARD LAYOUT
 
                 <li>
 
-                    <a href="dashboard-rentals.html">
+                    <a class="active" href="dashboard-rentals.html">
 
                         <i class="fa-solid fa-couch"></i>
 
@@ -111,7 +110,7 @@ DASHBOARD LAYOUT
 
                 <li>
 
-                    <a class="active" href="dashboard-requests.html">
+                    <a href="dashboard-requests.html">
 
                         <i class="fa-solid fa-headset"></i>
 
@@ -202,78 +201,60 @@ DASHBOARD LAYOUT
             <section class="dashboard-content">
 
                 <!-- ==========================================
-SUPPORT SUMMARY
+RENTAL SUMMARY
 ========================================== -->
 
                 <div class="row g-4 mb-5">
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
 
                         <div class="dashboard-card">
 
                             <div class="dashboard-icon bg-primary">
 
-                                <i class="fa-solid fa-ticket"></i>
-
-                            </div>
-
-                            <h2>08</h2>
-
-                            <p>Total Requests</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-3">
-
-                        <div class="dashboard-card">
-
-                            <div class="dashboard-icon bg-success">
-
-                                <i class="fa-solid fa-circle-check"></i>
+                                <i class="fa-solid fa-couch"></i>
 
                             </div>
 
                             <h2>05</h2>
 
-                            <p>Resolved</p>
+                            <p>Current Rentals</p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
+
+                        <div class="dashboard-card">
+
+                            <div class="dashboard-icon bg-success">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+                            <h2>18</h2>
+
+                            <p>Completed Rentals</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
 
                         <div class="dashboard-card">
 
                             <div class="dashboard-icon bg-warning">
 
-                                <i class="fa-solid fa-spinner"></i>
+                                <i class="fa-solid fa-hourglass-half"></i>
 
                             </div>
 
                             <h2>02</h2>
 
-                            <p>In Progress</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-3">
-
-                        <div class="dashboard-card">
-
-                            <div class="dashboard-icon bg-danger">
-
-                                <i class="fa-solid fa-clock"></i>
-
-                            </div>
-
-                            <h2>01</h2>
-
-                            <p>Pending</p>
+                            <p>Pending Returns</p>
 
                         </div>
 
@@ -282,14 +263,14 @@ SUPPORT SUMMARY
                 </div>
 
                 <!-- ==========================================
-SUPPORT TICKETS
+MY RENTALS
 ========================================== -->
 
                 <div class="dashboard-panel">
 
                     <h3 class="mb-4">
 
-                        Support Requests
+                        My Rental Products
 
                     </h3>
 
@@ -301,15 +282,13 @@ SUPPORT TICKETS
 
                                 <tr>
 
-                                    <th>Ticket ID</th>
+                                    <th>Furniture</th>
 
-                                    <th>Subject</th>
+                                    <th>Plan</th>
 
-                                    <th>Date</th>
+                                    <th>Monthly Rent</th>
 
                                     <th>Status</th>
-
-                                    <th>Priority</th>
 
                                     <th>Action</th>
 
@@ -321,53 +300,17 @@ SUPPORT TICKETS
 
                                 <tr>
 
-                                    <td>#SR1001</td>
+                                    <td>Luxury Sofa Set</td>
 
-                                    <td>Delivery Delay</td>
+                                    <td>Standard</td>
 
-                                    <td>10 Jul 2026</td>
-
-                                    <td>
-
-                                        <span class="badge bg-warning text-dark">
-
-                                            In Progress
-
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        High
-
-                                    </td>
-
-                                    <td>
-
-                                        <a href="#" class="btn btn-primary btn-sm demo-action">
-
-                                            View
-
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td>#SR1002</td>
-
-                                    <td>Furniture Exchange</td>
-
-                                    <td>08 Jul 2026</td>
+                                    <td>₹1,499</td>
 
                                     <td>
 
                                         <span class="badge bg-success">
 
-                                            Resolved
+                                            Active
 
                                         </span>
 
@@ -375,15 +318,9 @@ SUPPORT TICKETS
 
                                     <td>
 
-                                        Medium
+                                        <a href="#" class="btn btn-sm btn-primary demo-action">
 
-                                    </td>
-
-                                    <td>
-
-                                        <a href="#" class="btn btn-success btn-sm demo-action">
-
-                                            Closed
+                                            Extend
 
                                         </a>
 
@@ -393,17 +330,17 @@ SUPPORT TICKETS
 
                                 <tr>
 
-                                    <td>#SR1003</td>
+                                    <td>Queen Size Bed</td>
 
-                                    <td>Payment Issue</td>
+                                    <td>Long-Term</td>
 
-                                    <td>05 Jul 2026</td>
+                                    <td>₹1,999</td>
 
                                     <td>
 
-                                        <span class="badge bg-danger">
+                                        <span class="badge bg-success">
 
-                                            Pending
+                                            Active
 
                                         </span>
 
@@ -411,15 +348,69 @@ SUPPORT TICKETS
 
                                     <td>
 
-                                        High
+                                        <a href="#" class="btn btn-sm btn-primary demo-action">
+
+                                            Extend
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>Study Table</td>
+
+                                    <td>Starter</td>
+
+                                    <td>₹999</td>
+
+                                    <td>
+
+                                        <span class="badge bg-warning text-dark">
+
+                                            Ending Soon
+
+                                        </span>
 
                                     </td>
 
                                     <td>
 
-                                        <a href="#" class="btn btn-warning btn-sm demo-action">
+                                        <a href="#" class="btn btn-sm btn-danger demo-action">
 
-                                            Follow Up
+                                            Return
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>Dining Table</td>
+
+                                    <td>Standard</td>
+
+                                    <td>₹1,699</td>
+
+                                    <td>
+
+                                        <span class="badge bg-info">
+
+                                            Renewed
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="#" class="btn btn-sm btn-success demo-action">
+
+                                            View
 
                                         </a>
 
@@ -436,95 +427,71 @@ SUPPORT TICKETS
                 </div>
 
                 <!-- ==========================================
-CREATE TICKET
+RENTAL HISTORY
 ========================================== -->
 
                 <div class="dashboard-panel mt-4">
 
                     <h3 class="mb-4">
 
-                        Create Support Request
+                        Rental Timeline
 
                     </h3>
 
-                    <form>
+                    <ul class="list-group">
 
-                        <div class="row g-4">
+                        <li class="list-group-item">
 
-                            <div class="col-md-6">
+                            📦 Sofa Delivered
 
-                                <label class="form-label">
+                            <span class="float-end">
 
-                                    Subject
+                                02 Jan 2026
 
-                                </label>
+                            </span>
 
-                                <input type="text" class="form-control" placeholder="Enter subject">
+                        </li>
 
-                            </div>
+                        <li class="list-group-item">
 
-                            <div class="col-md-6">
+                            💳 Payment Successful
 
-                                <label class="form-label">
+                            <span class="float-end">
 
-                                    Category
+                                03 Jan 2026
 
-                                </label>
+                            </span>
 
-                                <select class="form-select">
+                        </li>
 
-                                    <option>Delivery</option>
+                        <li class="list-group-item">
 
-                                    <option>Payment</option>
+                            🔄 Rental Extended
 
-                                    <option>Furniture Damage</option>
+                            <span class="float-end">
 
-                                    <option>Exchange</option>
+                                01 Apr 2026
 
-                                    <option>Other</option>
+                            </span>
 
-                                </select>
+                        </li>
 
-                            </div>
+                        <li class="list-group-item">
 
-                            <div class="col-12">
+                            ⭐ Service Completed
 
-                                <label class="form-label">
+                            <span class="float-end">
 
-                                    Message
+                                18 Jun 2026
 
-                                </label>
+                            </span>
 
-                                <textarea class="form-control" rows="5" placeholder="Describe your issue..."></textarea>
+                        </li>
 
-                            </div>
-
-                            <div class="col-12">
-
-                                <button type="button" id="submitRequestBtn" class="btn btn-primary">
-
-                                    Submit Request
-
-                                </button>
-
-                            </div>
-
-                            <div class="col-12">
-
-                                <div id="requestSuccessMsg" class="alert alert-success d-none mb-0" role="alert">
-
-                                    <i class="fa-solid fa-circle-check me-2"></i>Request submitted! Our support team
-                                    will get back to you soon.
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </form>
+                    </ul>
 
                 </div>
+
 
             </section>
 
@@ -557,9 +524,9 @@ CREATE TICKET
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="../assets/js/storage.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
 
     <script>
         FurniAuth.requireAuth("customer", "login.html");
@@ -569,25 +536,11 @@ CREATE TICKET
             FurniAuth.logout();
             window.location.href = "login.html";
         });
-
-        document.getElementById("submitRequestBtn")?.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const form = e.target.closest("form");
-            const successMsg = document.getElementById("requestSuccessMsg");
-
-            successMsg?.classList.remove("d-none");
-            successMsg?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-            form?.reset();
-
-            setTimeout(() => {
-                successMsg?.classList.add("d-none");
-            }, 5000);
-        });
     </script>
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/footer.js"></script>
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+
 
 </body>
 
