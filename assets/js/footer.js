@@ -29,28 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <div class="footer-social d-flex gap-3">
 
-                    <a href="404.html"
+                    <a href="#"
                         aria-label="Facebook"
                         class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
                         style="width:40px;height:40px;">
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
-                    <a href="404.html"
+                    <a href="#"
                         aria-label="Instagram"
                         class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
                         style="width:40px;height:40px;">
                         <i class="fab fa-instagram"></i>
                     </a>
 
-                    <a href="404.html"
+                    <a href="#"
                         aria-label="LinkedIn"
                         class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
                         style="width:40px;height:40px;">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="404.html"
+                    <a href="#"
                         aria-label="Twitter"
                         class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center transition"
                         style="width:40px;height:40px;">
